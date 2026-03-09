@@ -33,7 +33,8 @@
         "power-profiles-daemon",
         "custom/applauncher",
         "clock",
-        //"clock#date",
+        "clock#date",
+        "battery",
         "custom/cava"
         //  "mpris",
     ],
@@ -44,8 +45,6 @@
         "group/ddcutil",
         "privacy",
         "group/audio",
-        "clock#date",
-        "battery",
         "group/powermenu"
     ]
 }

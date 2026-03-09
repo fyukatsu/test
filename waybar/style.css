@@ -24,7 +24,7 @@ window#waybar {
 tooltip {
     background: @secondary_container;
     border: 0.17em solid @outline; /* 3px */
-    border-radius: 0.75em;
+    border-radius: 1.2em;
     opacity: 1;
 }
 
@@ -45,15 +45,15 @@ tooltip label {
 }
 
 #workspaces button:first-child {
-    border-radius: 0.75em 0 0 0.75em;
+    border-radius: 1.2em 0 0 1.2em;
 }
 
 #workspaces button:last-child {
-    border-radius: 0 0.75em 0.75em 0;
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 #workspaces button:only-child {
-    border-radius: 0.75em;
+    border-radius: 1.2em;
 }
 
 #workspaces button:hover {
@@ -69,7 +69,7 @@ tooltip label {
     background: @surface_container_high;
     padding: 0 0 0 0.28em; /* 5px */
     margin-left: 0.35em;
-    border-radius: 0.75em 0 0 0.75em;
+    border-radius: 1.2em 0 0 1.2em;
 }
 
 .niri-taskbar button:hover {
@@ -100,7 +100,7 @@ tooltip label {
     padding: 0px 0.56em; /* 10px */
     background-color: @surface_container_high;
     color: @on_surface;
-    border-radius: 0 0.75em 0.75em 0;
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 #window label {
@@ -119,18 +119,21 @@ window#waybar.empty #window {
 #custom-actions {
     padding: 0px 0.3em 0px 0.5em; /* 7px */
     font-size: 1.35em; /* 20px */
-    border-radius: 0.75em 0 0 0.75em;
+    border-radius: 1.2em 0 0 1.2em;
 }
 
 #custom-screenshot {
     padding: 0px 0.35em; /* 7px */
     font-size: 1.15em; /* 22px */
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 /* wf-recoder脚本 */
 #custom-wfrec {
     padding: 0 0.25em; /* 7px */
     font-size: 1.1em;
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: 0.35em;
 }
 
 #custom-wallpapers {
@@ -141,7 +144,7 @@ window#waybar.empty #window {
 #custom-clipboard {
     padding: 0 0.5em 0 0.3em; /* 7px */
     font-size: 1.15em; /* 22px */
-    border-radius: 0 0.75em 0.75em 0;
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 #custom-wfrec.recording,
@@ -171,7 +174,7 @@ window#waybar.empty #window {
 
 #idle_inhibitor {
     margin-left: 0.35em;
-    border-radius: 0.75em 0 0 0.75em;
+    border-radius: 1.2em 0 0 1.2em;
 }
 
 #idle_inhibitor.activated {
@@ -180,7 +183,6 @@ window#waybar.empty #window {
 
 #power-profiles-daemon {
     padding: 0px 0.4em 0em 0.36em;
-    border-radius: 0 0.75em 0.75em 0;
 }
 
 #power-profiles-daemon.performance {
@@ -201,10 +203,8 @@ window#waybar.empty #window {
 #custom-applauncher {
     font-size: 1.39em; /* 25px */
     padding: 0px 0.39em; /* 7px */
-    margin: 0px 0.35em;
     background-color: @primary;
     color: @on_primary;
-    border-radius: 0.75em;
 }
 
 /* 胶囊4: clock - 独立胶囊 */
@@ -212,8 +212,6 @@ window#waybar.empty #window {
     padding: 0px 0.45em 0em 0.45em; /* 8px */
     background-color: @secondary;
     color: @on_secondary;
-    border-radius: 0.75em;
-    margin: 0px 0.35em;
 }
 
 /* 胶囊5: cava */
@@ -221,7 +219,8 @@ window#waybar.empty #window {
     background-color: @surface_container_high;
     color: @primary;
     padding: 0px 0.5em; /* 7px */
-    border-radius: 0.75em;
+    border-radius: 1.2em;
+    margin-left: 0.35em;
 }
 
 #mpris {
@@ -236,7 +235,7 @@ window#waybar.empty #window {
 
 /* 胶囊1: updates + tray */
 #custom-updates {
-    border-radius: 0.75em 0 0 0.75em;
+    border-radius: 1.2em 0 0 1.2em;
     padding: 0px 0.17em 0px 0.39em; /* 3px 7px */
     background-color: @surface_bright;
     color: @error;
@@ -246,13 +245,13 @@ window#waybar.empty #window {
     padding: 0px 0.39em 0px 0.39em; /* 7px */
     font-size: 1.11em; /* 20px */
     background-color: @surface_bright;
-    border-radius: 0 0.75em 0.75em 0;
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 /* 胶囊2: ddcutil (抽屉组) */
 #ddcutil {
     background-color: @surface_container_high;
-    border-radius: 0.75em;
+    border-radius: 1.2em;
     margin-left: 0.35em;
 }
 
@@ -302,14 +301,14 @@ window#waybar.empty #window {
     padding: 0px 0.39em; /* 7px */
     background-color: @surface_container_high;
     color: @error;
-    border-radius: 0.75em;
+    border-radius: 1.2em;
     margin-left: 0.35em;
 }
 
 /* 胶囊4: audio (抽屉组) */
 #audio {
     background-color: @surface_container_high;
-    border-radius: 0.75em;
+    border-radius: 1.2em;
     margin-left: 0.35em;
 }
 
@@ -357,8 +356,7 @@ window#waybar.empty #window {
 }
 
 #bluetooth {
-    margin-left: 0.35em;
-    border-radius: 0.75em 0 0 0.75em;
+    border-radius: 1.2em 0 0 1.2em;
     padding: 0px 0.3em 0 0.5em; /* 7px */
     font-size: 1.13em; /* 20px */
 }
@@ -370,10 +368,11 @@ window#waybar.empty #window {
 #network {
     padding: 0px 0.35em 0 0.3em; /* 7px */
     font-size: 1.1em; /* 22px */
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 #battery {
-    border-radius: 0 0.75em 0.75em 0;
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 #battery.critical:not(.charging) {
@@ -390,13 +389,15 @@ window#waybar.empty #window {
 /* 胶囊6: powermenu (抽屉组) */
 #powermenu {
     background-color: @surface;
-    border-radius: 0.75em;
+    border-radius: 1.2em;
     margin-left: 0.35em;
 }
 
 #custom-wlogout {
     padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
     font-size: 1.39em; /* 25px */
+    min-width: 2em;
+    text-align: center;
 }
 
 #custom-wlogout,
