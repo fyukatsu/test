@@ -15,9 +15,10 @@
 }
 
 window#waybar {
-    background: transparent;
-    color: @on_surface;
+    background: rgba(20, 19, 24, 0.40);
+    color: #ffffff;
     margin: 4px 6px 0 6px;
+    border-radius: 1.2em;
 }
 
 /* 鼠标悬浮信息提示 */
@@ -29,7 +30,7 @@ tooltip {
 }
 
 tooltip label {
-    color: @on_surface;
+    color: #ffffff;
     font-size: 0.89em; /* 16px */
 }
 
@@ -37,11 +38,11 @@ tooltip label {
 /*                           左侧                                   */
 /* ================================================================ */
 
-/* 胶囊1: 工作区 */
+/* 胶囊1: 工作区 - 不透明度等级4 */
 #workspaces button {
     padding: 0px 0.56em; /* 10px */
-    background: @surface;
-    color: @tertiary_container;
+    background: rgba(20, 19, 24, 0.80);
+    color: #ffffff;
 }
 
 #workspaces button:first-child {
@@ -57,7 +58,7 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    background: @on_tertiary;
+    background: rgba(20, 19, 24, 0.60);
 }
 
 #workspaces button.active {
@@ -66,18 +67,18 @@ tooltip label {
 
 /* 胶囊2: 任务栏 + 窗口名 */
 .niri-taskbar {
-    background: @surface_container_high;
+    background: rgba(20, 19, 24, 0.50);
     padding: 0 0 0 0.28em; /* 5px */
     margin-left: 0.35em;
     border-radius: 1.2em 0 0 1.2em;
 }
 
 .niri-taskbar button:hover {
-    background: @surface_container;
+    background: rgba(20, 19, 24, 0.40);
 }
 
 .niri-taskbar button.focused {
-    background: @surface;
+    background: rgba(20, 19, 24, 0.30);
 }
 
 .niri-taskbar button.urgent {
@@ -98,8 +99,8 @@ tooltip label {
 
 #window {
     padding: 0px 0.56em; /* 10px */
-    background-color: @surface_container_high;
-    color: @on_surface;
+    background-color: rgba(20, 19, 24, 0.50);
+    color: #ffffff;
     border-radius: 0 1.2em 1.2em 0;
 }
 
@@ -108,7 +109,7 @@ tooltip label {
 }
 
 window#waybar.empty #window {
-    background-color: @surface_container_high;
+    background-color: rgba(20, 19, 24, 0.50);
 }
 
 /* ================================================================ */
@@ -152,8 +153,8 @@ window#waybar.empty #window {
 #custom-clipboard,
 #custom-settings,
 #custom-screenshot {
-    background-color: @surface_container_high;
-    color: @secondary;
+    background-color: rgba(20, 19, 24, 0.50);
+    color: #ffffff;
 }
 
 /* 录制中 */
@@ -161,12 +162,12 @@ window#waybar.empty #window {
     color: @error;
 }
 
-/* 胶囊2: idle_inhibitor + colorpicker + power-profiles + applauncher + clock */
+/* 胶囊2: idle_inhibitor + colorpicker + power-profiles + applauncher + clock - 不透明度等级4 */
 #power-profiles-daemon,
 #custom-colorpicker,
 #idle_inhibitor {
-    background-color: @tertiary;
-    color: @on_tertiary;
+    background-color: rgba(20, 19, 24, 0.80);
+    color: #ffffff;
     padding: 0px 0.36em; /* 6px */
 }
 
@@ -184,66 +185,39 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon.performance {
-    color: @on_error;
+    color: @error;
     font-size: 1.28em; /* 23px */
     padding: 0px 0.32em 0px 0.45em; /* 9px 8px */
 }
 
 #power-profiles-daemon.balanced {
-    color: @on_tertiary;
+    color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
     color: #1aa052;
 }
 
-/* applauncher（胶囊2内） */
+/* applauncher（胶囊2内） - 不透明度等级4 */
 #custom-applauncher {
     font-size: 1.39em; /* 25px */
     padding: 0px 0.39em; /* 7px */
-    background-color: @primary;
-    color: @on_primary;
+    background-color: rgba(20, 19, 24, 0.80);
+    color: #ffffff;
 }
 
-/* clock（胶囊2右端） */
+/* clock（胶囊2右端） - 不透明度等级4 */
 #clock {
     padding: 0px 0.45em 0em 0.45em; /* 8px */
-    background-color: @secondary;
-    color: @on_secondary;
+    background-color: rgba(20, 19, 24, 0.80);
+    color: #ffffff;
     border-radius: 0 1.2em 1.2em 0;
-}
-
-/* 胶囊3: clock#date + battery */
-#clock.date {
-    padding: 0px 0.39em; /* 7px */
-    background-color: @secondary_container;
-    color: @on_secondary_container;
-    margin-left: 0.35em;
-    border-radius: 1.2em 0 0 1.2em;
-}
-
-#battery {
-    background-color: @surface_container;
-    color: @secondary;
-    padding: 0px 0.39em; /* 7px */
-    border-radius: 0 1.2em 1.2em 0;
-}
-
-#battery.critical:not(.charging) {
-    background-color: @surface_container;
-    color: @error;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    padding: 0px 0.39em; /* 7px */
 }
 
 /* 胶囊4: cava */
 #custom-cava {
-    background-color: @surface_container_high;
-    color: @primary;
+    background-color: rgba(20, 19, 24, 0.50);
+    color: #ffffff;
     padding: 0px 0.5em; /* 7px */
     border-radius: 1.2em;
     margin-left: 0.35em;
@@ -258,39 +232,40 @@ window#waybar.empty #window {
 /* ================================================================ */
 /*                           右侧                                   */
 /* ================================================================ */
+/* 右侧波浪边：从左到右不透明度递增 */
 
-/* 胶囊1: updates + tray */
+/* 波浪左端: custom/updates + tray - 不透明度等级1 */
 #custom-updates {
     border-radius: 1.2em 0 0 1.2em;
     padding: 0px 0.17em 0px 0.39em; /* 3px 7px */
-    background-color: @surface_bright;
-    color: @error;
+    background-color: rgba(20, 19, 24, 0.20);
+    color: #ffffff;
 }
 
 #tray {
     padding: 0px 0.39em 0px 0.39em; /* 7px */
     font-size: 1.11em; /* 20px */
-    background-color: @surface_bright;
-    border-radius: 0 1.2em 1.2em 0;
+    background-color: rgba(20, 19, 24, 0.20);
+    border-radius: 0;
 }
 
-/* 胶囊2: ddcutil (抽屉组) */
+/* 波浪第2段: ddcutil + privacy + audio - 不透明度等级2.5 */
 #ddcutil {
-    background-color: @surface_container_high;
-    border-radius: 1.2em;
-    margin-left: 0.35em;
+    background-color: rgba(20, 19, 24, 0.50);
+    border-radius: 0;
+    margin-left: 0;
 }
 
 #custom-ddcutil-day,
 #custom-ddcutil-night,
 #custom-ddcutil-sleep,
 #custom-separator.1 {
-    color: @tertiary;
+    color: #ffffff;
     padding: 0px 0.33em; /* 5px */
 }
 
 #backlight {
-    color: @tertiary;
+    color: #ffffff;
     padding: 0px 0.28em 0px 0px; /* 5px */
 }
 
@@ -322,31 +297,31 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-/* 胶囊3: privacy */
+/* privacy - 不透明度等级2.5 */
 #privacy {
     padding: 0px 0.39em; /* 7px */
-    background-color: @surface_container_high;
+    background-color: rgba(20, 19, 24, 0.50);
     color: @error;
-    border-radius: 1.2em;
-    margin-left: 0.35em;
+    border-radius: 0;
+    margin-left: 0;
 }
 
-/* 胶囊4: audio (抽屉组) */
+/* audio - 不透明度等级2.5 */
 #audio {
-    background-color: @surface_container_high;
-    border-radius: 1.2em;
-    margin-left: 0.35em;
+    background-color: rgba(20, 19, 24, 0.50);
+    border-radius: 0;
+    margin-left: 0;
 }
 
 #pulseaudio {
     padding: 0px 0px 0px 0.28em; /* 5px */
-    color: @tertiary;
+    color: #ffffff;
 }
 
 #pulseaudio-slider {
     padding: 0px 0px 0px 0.56em; /* 10px */
     margin: 0px;
-    color: @tertiary;
+    color: #ffffff;
 }
 
 #pulseaudio-slider slider {
@@ -371,12 +346,12 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-/* bluetooth + network（胶囊1左端，在中间区域） */
+/* bluetooth + network（中间区域，与wfrec+screenshot同组） */
 #bluetooth,
 #bluetooth.disabled,
 #network {
-    background-color: @surface_container;
-    color: @secondary;
+    background-color: rgba(20, 19, 24, 0.50);
+    color: #ffffff;
     padding: 0px 0.39em; /* 7px */
 }
 
@@ -395,11 +370,38 @@ window#waybar.empty #window {
     font-size: 1.1em; /* 22px */
 }
 
-/* 胶囊6: powermenu (抽屉组) */
+/* 波浪右端: powermenu - 不透明度等级5 */
 #powermenu {
-    background-color: @surface;
-    border-radius: 1.2em;
-    margin-left: 0.35em;
+    background-color: rgba(20, 19, 24, 1.00);
+    border-radius: 0 1.2em 1.2em 0;
+    margin-left: 0;
+}
+
+/* 波浪第3段: clock#date + battery（在modules-right中）- 不透明度等级3.5 */
+#clock.date {
+    padding: 0px 0.39em; /* 7px */
+    background-color: rgba(20, 19, 24, 0.70);
+    color: #ffffff;
+    border-radius: 0;
+    margin-left: 0;
+}
+
+#battery {
+    background-color: rgba(20, 19, 24, 0.70);
+    color: #ffffff;
+    padding: 0px 0.39em; /* 7px */
+    border-radius: 0;
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(20, 19, 24, 0.70);
+    color: @error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    padding: 0px 0.39em; /* 7px */
 }
 
 #custom-wlogout {
@@ -411,7 +413,7 @@ window#waybar.empty #window {
 #custom-reboot,
 #custom-lockscreen,
 #custom-logout {
-    color: @error;
+    color: #ffffff;
     padding: 0px 0.56em; /* 10px */
 }
 
