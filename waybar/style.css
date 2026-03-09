@@ -274,19 +274,20 @@ window#waybar.empty #window {
 }
 
 #audio {
-    background-color: @surface_bright;
     border-radius: 0;
     padding-right: 1.2em;
 }
 
 #pulseaudio {
     padding: 0px 0px 0px 0.28em;
+    background-color: @surface_bright;
     color: @on_surface;
 }
 
 #pulseaudio-slider {
     padding: 0px 0px 0px 0.56em;
     margin: 0px;
+    background-color: @surface_bright;
     color: @on_surface;
 }
 
