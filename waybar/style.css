@@ -126,30 +126,31 @@ window#waybar.empty #window {
 }
 
 /* ================================================================ */
-/*                     CENTER — two capsules                         */
+/*                     CENTER — divider capsules                     */
 /* ================================================================ */
 
 /*
- * Capsule 1: bluetooth  network  wfrec  screenshot
- *            alpha(@background, 0.50)
+ * Transparent: bluetooth  network  wfrec  screenshot  idle_inhibitor  (no background)
  *
- * Capsule 2: idle_inhibitor  settings  power-profiles  applauncher  clock
- *            alpha(@background, 0.80)
+ * Capsule 2: ( settings  power-profiles  applauncher  clock )
+ *            alpha(@background, 0.80) — edges via Powerline dividers
+ *
+ * Cava pill: ( cava )
+ *            alpha(@background, 0.50) — edges via Powerline dividers
  */
 
-/* --- Capsule 1 shared background --- */
+/* --- Center left (no capsule) --- */
 #bluetooth,
 #bluetooth.disabled,
 #network,
 #custom-wfrec,
 #custom-wfrec.recording,
-#custom-screenshot {
-    background-color: alpha(@background, 0.50);
+#custom-screenshot,
+#idle_inhibitor {
     color: @on_surface;
 }
 
 #bluetooth {
-    border-radius: 1.2em 0 0 1.2em;
     padding: 0px 0.3em 0 0.5em;
     font-size: 1.13em;
 }
@@ -175,11 +176,17 @@ window#waybar.empty #window {
 #custom-screenshot {
     padding: 0px 0.35em;
     font-size: 1.15em;
-    border-radius: 0 1.2em 1.2em 0;
+}
+
+/* ( capsule2 left edge — transparent → alpha(@background, 0.80) */
+#custom-left_div.1 {
+    color: alpha(@background, 0.80);
+    font-size: 1.39em;
+    padding: 0px;
+    margin-left: 0.35em;
 }
 
 /* --- Capsule 2 shared background --- */
-#idle_inhibitor,
 #custom-settings,
 #power-profiles-daemon,
 #custom-applauncher,
@@ -189,8 +196,6 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    margin-left: 0.35em;
-    border-radius: 1.2em 0 0 1.2em;
     padding: 0px 0.36em;
 }
 
@@ -227,16 +232,35 @@ window#waybar.empty #window {
 
 #clock {
     padding: 0px 0.45em;
-    border-radius: 0 1.2em 1.2em 0;
 }
 
-/* Cava — standalone pill */
+/* ) capsule2 right edge — alpha(@background, 0.80) → transparent */
+#custom-right_div.1 {
+    color: alpha(@background, 0.80);
+    font-size: 1.39em;
+    padding: 0px;
+}
+
+/* ( cava left edge — transparent → alpha(@background, 0.50) */
+#custom-left_div.2 {
+    color: alpha(@background, 0.50);
+    font-size: 1.39em;
+    padding: 0px;
+    margin-left: 0.35em;
+}
+
+/* Cava */
 #custom-cava {
     background-color: alpha(@background, 0.50);
     color: @on_surface;
     padding: 0px 0.5em;
-    border-radius: 1.2em;
-    margin-left: 0.35em;
+}
+
+/* ) cava right edge — alpha(@background, 0.50) → transparent */
+#custom-right_div.2 {
+    color: alpha(@background, 0.50);
+    font-size: 1.39em;
+    padding: 0px;
 }
 
 #mpris {
@@ -347,6 +371,7 @@ window#waybar.empty #window {
     background-color: @surface_container_high;
     color: @on_surface;
     padding: 0px 0.39em;
+    margin-left: -1px;
 }
 
 #battery.critical:not(.charging) {

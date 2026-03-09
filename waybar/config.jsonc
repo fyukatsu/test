@@ -32,11 +32,15 @@
 	//  "custom/clipboard",
         "idle_inhibitor",
     // "custom/colorpicker",
+        "custom/left_div#1",
         "custom/settings",
         "power-profiles-daemon",
         "custom/applauncher",
         "clock",
-        "custom/cava"
+        "custom/right_div#1",
+        "custom/left_div#2",
+        "custom/cava",
+        "custom/right_div#2"
         //  "mpris",
     ],
     "modules-right": [
