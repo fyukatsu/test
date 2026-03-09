@@ -245,17 +245,18 @@ window#waybar.empty #window {
 }
 
 #tray {
-    padding: 0px 0.39em 0px 0.39em; /* 7px */
+    padding: 0px 0.39em 0px 0.9em;
     font-size: 1.11em; /* 20px */
     background-color: alpha(@background, 0.20);
-    border-radius: 0;
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: -0.52em;
 }
 
 /* 波浪第2段: ddcutil + privacy + audio - 不透明度等级2.5 */
 #ddcutil {
     background-color: alpha(@background, 0.50);
     border-radius: 1.2em 0 0 1.2em;
-    margin-left: 0;
+    margin-left: -0.52em;
 }
 
 #custom-ddcutil-day,
@@ -376,7 +377,7 @@ window#waybar.empty #window {
 #powermenu {
     background-color: @background;
     border-radius: 1.2em 0 0 1.2em;
-    margin-left: 0;
+    margin-left: -0.52em;
 }
 
 /* 波浪第3段: clock#date + battery（在modules-right中）- 不透明度等级3.5 */
@@ -385,7 +386,7 @@ window#waybar.empty #window {
     background-color: alpha(@background, 0.70);
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
-    margin-left: 0;
+    margin-left: -0.52em;
 }
 
 #battery {
