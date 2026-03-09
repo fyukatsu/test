@@ -394,10 +394,8 @@ window#waybar.empty #window {
 }
 
 #custom-wlogout {
-    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    padding: 0px 1em 0px 1em;
     font-size: 1.39em; /* 25px */
-    min-width: 2em;
-    text-align: center;
 }
 
 #custom-wlogout,
