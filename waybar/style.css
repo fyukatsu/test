@@ -263,14 +263,13 @@ window#waybar.empty #window {
     font-size: 1.11em;
     background-color: alpha(@background, 0.20);
     color: @on_surface;
-    border-radius: 1.2em 0 0 1.2em;
+    border-radius: 0;
 }
 
 /* --- Layer 2: ddcutil + privacy + audio — alpha(@background, 0.50) --- */
 #ddcutil {
     background-color: alpha(@background, 0.50);
     border-radius: 1.2em 0 0 1.2em;
-    margin-left: -0.52em;
 }
 
 #custom-ddcutil-day,
@@ -367,7 +366,6 @@ window#waybar.empty #window {
     background-color: alpha(@background, 0.70);
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
-    margin-left: -0.52em;
 }
 
 #battery {
@@ -392,7 +390,6 @@ window#waybar.empty #window {
 #powermenu {
     background-color: @background;
     border-radius: 1.2em 0 0 1.2em;
-    margin-left: -0.52em;
 }
 
 #custom-wlogout {
