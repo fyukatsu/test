@@ -1,4 +1,4 @@
-g{
+{
   //电池电量
   "battery": {
     "interval": 60,
