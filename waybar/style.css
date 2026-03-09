@@ -261,24 +261,25 @@ window#waybar.empty #window {
     font-size: 1.11em;
     background-color: @surface_variant;
     color: @on_surface;
-    border-radius: 1.2em 0 0 1.2em;
+    border-radius: 1.2em 0 0 1.0em;
 }
 
 /* --- Layer 2: audio + mako --- */
 #audio {
     background-color: @surface_bright;
-    border-radius: 1.2em 0 0 1.2em;
-    margin-left: -1.2em;
-    padding-left: 1.59em;
+    border-radius: 0;
 }
 
 #pulseaudio {
-    padding: 0px 0px 0px 0.28em;
+    padding: 0px 0px 0px 1.59em;
+    background-color: @surface_bright;
     color: @on_surface;
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: -1.2em;
 }
 
 #pulseaudio-slider {
-    padding: 0px 0px 0px 0.56em;
+    padding: 0px 0px 0px 0.28em;
     margin: 0px;
     color: @on_surface;
 }
@@ -287,7 +288,7 @@ window#waybar.empty #window {
     background-color: @surface_bright;
     color: @on_surface;
     border-radius: 0;
-    padding: 0px 1.2em 0px 0.39em;
+    padding: 0px 1.2em 0px 1.0em;
 }
 
 #pulseaudio-slider slider {
@@ -324,7 +325,7 @@ window#waybar.empty #window {
 #battery {
     background-color: @surface_container_high;
     color: @on_surface;
-    padding: 0px 1.2em 0px 0.39em;
+    padding: 0px 1.2em 0px 1.0em;
     border-radius: 0;
 }
 
