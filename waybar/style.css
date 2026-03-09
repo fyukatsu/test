@@ -128,7 +128,7 @@ window#waybar.empty #window {
  * Capsule 1: bluetooth  network  wfrec  screenshot
  *            alpha(@background, 0.50)
  *
- * Capsule 2: idle_inhibitor  colorpicker  power-profiles  applauncher  clock
+ * Capsule 2: idle_inhibitor  settings  power-profiles  applauncher  clock
  *            alpha(@background, 0.80)
  */
 
@@ -175,7 +175,7 @@ window#waybar.empty #window {
 
 /* --- Capsule 2 shared background --- */
 #idle_inhibitor,
-#custom-colorpicker,
+#custom-settings,
 #power-profiles-daemon,
 #custom-applauncher,
 #clock {
@@ -193,7 +193,7 @@ window#waybar.empty #window {
     padding: 0px 0.4em;
 }
 
-#custom-colorpicker {
+#custom-settings {
     padding: 0px 0.36em;
 }
 
@@ -244,8 +244,8 @@ window#waybar.empty #window {
 /*                     RIGHT — (  (  (  (  |                        */
 /*           rounded left, flat right, expanding leftward            */
 /*                                                                   */
-/*   ( updates  ( tray  ( ddcutil  privacy  audio  ( date  battery  ( powermenu |*/
-/*      surface_variant     surface_bright      surface_container_high    @background*/
+/*   ( tray  ( mako  audio  ( date  battery  ( powermenu |*/
+/*   surface_variant  surface_bright  surface_container_high  @background*/
 /* ================================================================ */
 
 /* --- Layer 1 (outermost): tray --- */
@@ -257,68 +257,20 @@ window#waybar.empty #window {
 }
 
 #tray {
-    padding: 0px 1.2em 0px 0.56em;
+    padding: 0px 1.2em 0px 1.2em;
     font-size: 1.11em;
     background-color: @surface_variant;
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
 }
 
-/* --- Layer 2: ddcutil + audio --- */
-#ddcutil {
+/* --- Layer 2: mako + audio --- */
+#custom-mako {
     background-color: @surface_bright;
+    color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
     margin-left: -1.2em;
-    padding-left: 1.59em;
-}
-
-#custom-ddcutil-day,
-#custom-ddcutil-night,
-#custom-ddcutil-sleep,
-#custom-separator.1 {
-    color: @on_surface;
-    padding: 0px 0.33em;
-}
-
-#backlight {
-    color: @on_surface;
-    padding: 0px 0.28em 0px 0px;
-}
-
-#backlight-slider {
-    padding: 0px 0.28em 0px 0px;
-}
-
-#backlight-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    background: none;
-}
-
-#backlight-slider trough {
-    min-height: 0.56em;
-    min-width: 4.44em;
-    border-radius: 0.28em;
-    opacity: 0;
-    background-color: @background;
-}
-
-#backlight-slider highlight {
-    min-width: 0.56em;
-    border-radius: 0.28em;
-    background-color: @tertiary;
-}
-
-#privacy {
-    padding: 0px 0.39em;
-    background-color: @surface_bright;
-    color: @error;
-    border-radius: 0;
-    margin-left: 0;
+    padding: 0px 0.39em 0px 1.59em;
 }
 
 #audio {
@@ -362,7 +314,7 @@ window#waybar.empty #window {
 
 /* --- Layer 3: date + battery --- */
 #clock.date {
-    padding: 0px 0.39em 0px 1.59em;
+    padding: 0px 0.39em 0px 1.2em;
     background-color: @surface_container_high;
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
