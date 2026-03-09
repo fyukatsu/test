@@ -248,28 +248,28 @@ window#waybar.empty #window {
 /*      surface_variant     surface_bright      surface_container_high    @background*/
 /* ================================================================ */
 
-/* --- Layer 1 (outermost): updates + tray --- */
+/* --- Layer 1 (outermost): tray --- */
 #custom-updates {
     border-radius: 1.2em 0 0 1.2em;
-    padding: 0px 0.17em 0px 0.39em;
+    padding: 0px 1.2em 0px 0.39em;
     background-color: @surface_variant;
     color: @on_surface;
 }
 
 #tray {
-    padding: 0px 1.2em 0px 0.17em;
+    padding: 0px 1.2em 0px 0.56em;
     font-size: 1.11em;
     background-color: @surface_variant;
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
 }
 
-/* --- Layer 2: ddcutil + privacy + audio --- */
+/* --- Layer 2: ddcutil + audio --- */
 #ddcutil {
     background-color: @surface_bright;
     border-radius: 1.2em 0 0 1.2em;
     margin-left: -1.2em;
-    padding-left: 1.2em;
+    padding-left: 1.59em;
 }
 
 #custom-ddcutil-day,

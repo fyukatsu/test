@@ -38,10 +38,10 @@
     ],
     "modules-right": [
         // "group/backlight",
-        "custom/updates",
+        // "custom/updates",
         "tray",
         "group/ddcutil",
-        "privacy",
+        // "privacy",
         "group/audio",
         "clock#date",
         "battery",
