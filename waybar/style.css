@@ -270,6 +270,8 @@ window#waybar.empty #window {
 #ddcutil {
     background-color: alpha(@background, 0.50);
     border-radius: 1.2em 0 0 1.2em;
+    margin-left: -1.2em;
+    padding-left: 1.2em;
 }
 
 #custom-ddcutil-day,
@@ -362,10 +364,11 @@ window#waybar.empty #window {
 
 /* --- Layer 3: date + battery — alpha(@background, 0.70) --- */
 #clock.date {
-    padding: 0px 0.39em;
+    padding: 0px 0.39em 0px 1.2em;
     background-color: alpha(@background, 0.70);
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
+    margin-left: -1.2em;
 }
 
 #battery {
@@ -390,6 +393,8 @@ window#waybar.empty #window {
 #powermenu {
     background-color: @background;
     border-radius: 1.2em 0 0 1.2em;
+    margin-left: -1.2em;
+    padding-left: 1.2em;
 }
 
 #custom-wlogout {
