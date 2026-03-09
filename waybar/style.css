@@ -244,7 +244,7 @@ window#waybar.empty #window {
 /*                     RIGHT — (  (  (  (  |                        */
 /*           rounded left, flat right, expanding leftward            */
 /*                                                                   */
-/*   ( tray  ( mako  audio  ( date  battery  ( powermenu |*/
+/*   ( tray  ( audio  mako  ( date  battery  ( powermenu |*/
 /*   surface_variant  surface_bright  surface_container_high  @background*/
 /* ================================================================ */
 
@@ -264,32 +264,30 @@ window#waybar.empty #window {
     border-radius: 1.2em 0 0 1.2em;
 }
 
-/* --- Layer 2: mako + audio --- */
-#custom-mako {
-    background-color: @surface_bright;
-    color: @on_surface;
-    border-radius: 1.2em 0 0 1.2em;
-    margin-left: -1.2em;
-    padding: 0px 0.39em 0px 1.59em;
-}
-
+/* --- Layer 2: audio + mako --- */
 #audio {
     background-color: @surface_bright;
-    border-radius: 0;
-    padding-right: 1.2em;
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: -1.2em;
+    padding-left: 1.59em;
 }
 
 #pulseaudio {
     padding: 0px 0px 0px 0.28em;
-    background-color: @surface_bright;
     color: @on_surface;
 }
 
 #pulseaudio-slider {
     padding: 0px 0px 0px 0.56em;
     margin: 0px;
+    color: @on_surface;
+}
+
+#custom-mako {
     background-color: @surface_bright;
     color: @on_surface;
+    border-radius: 0;
+    padding: 0px 1.2em 0px 0.39em;
 }
 
 #pulseaudio-slider slider {
