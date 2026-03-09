@@ -244,10 +244,8 @@ window#waybar.empty #window {
 /*                     RIGHT — (  (  (  (  |                        */
 /*           rounded left, flat right, expanding leftward            */
 /*                                                                   */
-/*   ( updates  tray           alpha(@background, 0.20)             */
-/*     ( ddcutil  privacy  audio   alpha(@background, 0.50)         */
-/*       ( date  battery           alpha(@background, 0.70)         */
-/*         ( powermenu |           @background                      */
+/*   ( updates  tray  ( ddcutil  privacy  audio  ( date  battery  ( powermenu |
+/*        0.20               0.50                     0.70           solid
 /* ================================================================ */
 
 /* --- Layer 1 (outermost): updates + tray — alpha(@background, 0.20) --- */
@@ -326,7 +324,6 @@ window#waybar.empty #window {
 #audio {
     background-color: alpha(@background, 0.50);
     border-radius: 0;
-    margin-left: 0;
 }
 
 #pulseaudio {
@@ -364,7 +361,7 @@ window#waybar.empty #window {
 
 /* --- Layer 3: date + battery — alpha(@background, 0.70) --- */
 #clock.date {
-    padding: 0px 0.39em 0px 1.2em;
+    padding: 0px 0.39em 0px 1.59em;
     background-color: alpha(@background, 0.70);
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
