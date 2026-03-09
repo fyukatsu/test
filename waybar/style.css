@@ -274,6 +274,7 @@ window#waybar.empty #window {
 }
 
 #audio {
+    background-color: @surface_bright;
     border-radius: 0;
     padding-right: 1.2em;
 }

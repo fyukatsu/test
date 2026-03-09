@@ -43,8 +43,8 @@
         "tray",
         // "group/ddcutil",
         // "privacy",
-        "custom/mako",
         "group/audio",
+        "custom/mako",
         "clock#date",
         "battery",
         "group/powermenu"
