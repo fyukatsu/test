@@ -1,285 +1,433 @@
 @import "colors.css";
 
-/* =========================================================
-   全局变量
-   ========================================================= */
-
+/* 核心逻辑：全相对单位 (em) 改造
+   基准字体大小：16.6px
+   如果需要整体放大缩小，只需修改下方的值即可
+   圆角样式 - 模块以圆角胶囊形式分组显示
+*/
 * {
     border: none;
     border-radius: 0;
-
-    font-family:
-        "JetBrainsMono Nerd Font Propo",
-        "LXGW WenKai Screen",
-        "JetBrains Maple Mono";
-
-    font-size: 16.6px;
+    font-family: "JetBrainsMono Nerd Font Propo","LXGW WenKai Screen","JetBrains Maple Mono";
+    /* font-family:"0xProto Nerd Font Propo"; */
+    font-size: 16.6px; /* 基准大小 */
     opacity: 1;
 }
 
-/* 可调参数 */
-:root {
-    --radius: 1.2em;
-    --wave-overlap: -0.6em;
-
-    --bg1: alpha(@background,0.20);
-    --bg2: alpha(@background,0.50);
-    --bg3: alpha(@background,0.70);
-    --bg4: alpha(@background,0.80);
-    --bg5: @background;
-}
-
-/* =========================================================
-   Waybar 主体
-   ========================================================= */
-
 window#waybar {
-    background: alpha(@background,0.40);
+    background: alpha(@background, 0.40);
     color: @on_surface;
-
     margin: 4px 6px 0 6px;
-    border-radius: var(--radius);
+    border-radius: 1.2em;
 }
 
-/* =========================================================
-   Tooltip
-   ========================================================= */
-
+/* 鼠标悬浮信息提示 */
 tooltip {
     background: @secondary_container;
-    border: 0.17em solid @outline;
-    border-radius: var(--radius);
+    border: 0.17em solid @outline; /* 3px */
+    border-radius: 1.2em;
+    opacity: 1;
 }
 
 tooltip label {
     color: @on_surface;
-    font-size: 0.89em;
+    font-size: 0.89em; /* 16px */
 }
 
-/* =========================================================
-   左侧
-   ========================================================= */
+/* ================================================================ */
+/*                           左侧                                   */
+/* ================================================================ */
 
-/* 工作区 */
+/* 左侧波浪: |  )  )  ) — 平左、圆右，向右扩散 */
 
+/* 第1层: 工作区 - 不透明度等级4 */
 #workspaces button {
-    padding: 0 0.56em;
-    background: var(--bg4);
+    padding: 0px 0.56em; /* 10px */
+    background: alpha(@background, 0.80);
     color: @on_surface;
 }
 
+#workspaces button:first-child {
+    border-radius: 0;
+}
+
 #workspaces button:last-child {
-    border-radius: 0 var(--radius) var(--radius) 0;
+    border-radius: 0 1.2em 1.2em 0;
+}
+
+#workspaces button:only-child {
+    border-radius: 0 1.2em 1.2em 0;
 }
 
 #workspaces button:hover {
-    background: alpha(@background,0.60);
+    background: alpha(@background, 0.60);
 }
 
 #workspaces button.active {
     color: @tertiary;
 }
 
-/* niri taskbar */
-
+/* 第2层: 任务栏 + 窗口名 */
 .niri-taskbar {
-    background: var(--bg2);
-    padding-left: 0.28em;
+    background: alpha(@background, 0.50);
+    padding: 0 0 0 0.28em; /* 5px */
+    margin-left: 0;
+    border-radius: 0;
 }
 
 .niri-taskbar button:hover {
-    background: alpha(@background,0.40);
+    background: alpha(@background, 0.40);
 }
 
 .niri-taskbar button.focused {
-    background: alpha(@background,0.30);
+    background: alpha(@background, 0.30);
 }
 
-/* window title */
-
-#window {
-    padding: 0 0.56em;
-    background: var(--bg2);
-    border-radius: 0 var(--radius) var(--radius) 0;
+.niri-taskbar button.urgent {
+    background-color: @tertiary;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
-
-#window label {
-    font-size: 0.89em;
-}
-
-/* =========================================================
-   中间模块
-   ========================================================= */
-
-#bluetooth,
-#network,
-#custom-actions,
-#custom-wfrec,
-#custom-screenshot,
-#custom-wallpapers,
-#custom-clipboard {
-    background: var(--bg2);
-    color: @on_surface;
-}
-
-/* bluetooth */
-
-#bluetooth {
-    border-radius: var(--radius) 0 0 var(--radius);
-    padding: 0 0.5em;
-    font-size: 1.13em;
-}
-
-#network {
-    padding: 0 0.35em;
-}
-
-/* screenshot */
-
-#custom-screenshot {
-    padding: 0 0.35em;
-    border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-/* recorder */
-
-#custom-wfrec.recording {
-    color: @error;
-}
-
-/* 胶囊2 */
-
-#idle_inhibitor,
-#custom-colorpicker,
-#power-profiles-daemon,
-#custom-applauncher,
-#clock {
-    background: var(--bg4);
-    color: @on_surface;
-}
-
-/* idle inhibitor */
-
-#idle_inhibitor {
-    margin-left: 0.35em;
-    border-radius: var(--radius) 0 0 var(--radius);
-    padding: 0 0.36em;
-}
-
-/* power profile */
-
-#power-profiles-daemon.performance {
-    color: @error;
-    font-size: 1.28em;
-}
-
-/* applauncher */
-
-#custom-applauncher {
-    font-size: 1.39em;
-    padding: 0 0.39em;
-}
-
-/* clock */
-
-#clock {
-    padding: 0 0.45em;
-    border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-/* cava */
-
-#custom-cava {
-    background: var(--bg2);
-    border-radius: var(--radius);
-    padding: 0 0.5em;
-    margin-left: 0.35em;
-}
-
-/* =========================================================
-   右侧波浪
-   ========================================================= */
-
-/* 第1层 updates + tray */
-
-#custom-updates {
-    background: var(--bg1);
-    border-radius: var(--radius) 0 0 var(--radius);
-    padding: 0 0.17em 0 0.39em;
-}
-
-#tray {
-    background: var(--bg1);
-    padding: 0 0.6em 0 0.39em;
-}
-
-/* 第2层 */
-
-#ddcutil {
-    background: var(--bg2);
-    border-radius: var(--radius) 0 0 var(--radius);
-    margin-left: var(--wave-overlap);
-}
-
-#privacy,
-#audio {
-    background: var(--bg2);
-}
-
-/* 第3层 */
-
-#clock.date {
-    background: var(--bg3);
-    border-radius: var(--radius) 0 0 var(--radius);
-    margin-left: var(--wave-overlap);
-}
-
-#battery {
-    background: var(--bg3);
-}
-
-/* 第4层 */
-
-#powermenu {
-    background: var(--bg5);
-    border-radius: var(--radius) 0 0 var(--radius);
-    margin-left: var(--wave-overlap);
-}
-
-/* =========================================================
-   Slider
-   ========================================================= */
-
-#pulseaudio-slider trough,
-#backlight-slider trough {
-    min-height: 0.56em;
-    min-width: 4.44em;
-    border-radius: 0.28em;
-}
-
-#pulseaudio-slider highlight,
-#backlight-slider highlight {
-    border-radius: 0.28em;
-    background: @tertiary;
-}
-
-/* =========================================================
-   其他
-   ========================================================= */
-
-#custom-swaync {
-    background: @surface_container_high;
-    color: @on_surface_container;
-    padding: 0 0.83em;
-}
-
-/* =========================================================
-   动画
-   ========================================================= */
 
 @keyframes blink {
     to {
         background-color: @primary;
         color: @error;
     }
+}
+
+#window {
+    padding: 0px 0.56em; /* 10px */
+    background-color: alpha(@background, 0.50);
+    color: @on_surface;
+    border-radius: 0 1.2em 1.2em 0;
+}
+
+#window label {
+    font-size: 0.89em; /* 16px */
+}
+
+window#waybar.empty #window {
+    background-color: alpha(@background, 0.50);
+}
+
+/* ================================================================ */
+/*                           中间                                   */
+/* ================================================================ */
+
+/* 胶囊1: bluetooth + network + wfrec + screenshot */
+#custom-actions {
+    padding: 0px 0.3em 0px 0.5em; /* 7px */
+    font-size: 1.35em; /* 20px */
+    border-radius: 1.2em 0 0 1.2em;
+}
+
+#custom-screenshot {
+    padding: 0px 0.35em; /* 7px */
+    font-size: 1.15em; /* 22px */
+    border-radius: 0 1.2em 1.2em 0;
+}
+
+/* wf-recoder脚本 */
+#custom-wfrec {
+    padding: 0 0.25em; /* 7px */
+    font-size: 1.1em;
+}
+
+#custom-wallpapers {
+    padding: 0 0.5em 0 0.3em; /* 7px */
+    font-size: 1.15em; /* 22px */
+}
+
+#custom-clipboard {
+    padding: 0 0.5em 0 0.3em; /* 7px */
+    font-size: 1.15em; /* 22px */
+    border-radius: 0 1.2em 1.2em 0;
+}
+
+#custom-wfrec.recording,
+#custom-wfrec,
+#custom-actions,
+#custom-wallpapers,
+#custom-clipboard,
+#custom-settings,
+#custom-screenshot {
+    background-color: alpha(@background, 0.50);
+    color: @on_surface;
+}
+
+/* 录制中 */
+#custom-wfrec.recording {
+    color: @error;
+}
+
+/* 胶囊2: idle_inhibitor + colorpicker + power-profiles + applauncher + clock - 不透明度等级4 */
+#power-profiles-daemon,
+#custom-colorpicker,
+#idle_inhibitor {
+    background-color: alpha(@background, 0.80);
+    color: @on_surface;
+    padding: 0px 0.36em; /* 6px */
+}
+
+#idle_inhibitor {
+    margin-left: 0.35em;
+    border-radius: 1.2em 0 0 1.2em;
+}
+
+#idle_inhibitor.activated {
+    padding: 0px 0.4em 0px 0.4em;
+}
+
+#power-profiles-daemon {
+    padding: 0px 0.4em 0em 0.36em;
+}
+
+#power-profiles-daemon.performance {
+    color: @error;
+    font-size: 1.28em; /* 23px */
+    padding: 0px 0.32em 0px 0.45em; /* 9px 8px */
+}
+
+#power-profiles-daemon.balanced {
+    color: @on_surface;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #1aa052;
+}
+
+/* applauncher（胶囊2内） - 不透明度等级4 */
+#custom-applauncher {
+    font-size: 1.39em; /* 25px */
+    padding: 0px 0.39em; /* 7px */
+    background-color: alpha(@background, 0.80);
+    color: @on_surface;
+}
+
+/* clock（胶囊2右端） - 不透明度等级4 */
+#clock {
+    padding: 0px 0.45em 0em 0.45em; /* 8px */
+    background-color: alpha(@background, 0.80);
+    color: @on_surface;
+    border-radius: 0 1.2em 1.2em 0;
+}
+
+/* 胶囊4: cava */
+#custom-cava {
+    background-color: alpha(@background, 0.50);
+    color: @on_surface;
+    padding: 0px 0.5em; /* 7px */
+    border-radius: 1.2em;
+    margin-left: 0.35em;
+}
+
+#mpris {
+    background-color: @surface_container_high;
+    color: @primary;
+    padding: 0px 0.39em 0px 0px; /* 7px 0 0 */
+}
+
+/* ================================================================ */
+/*                           右侧                                   */
+/* ================================================================ */
+/* 右侧波浪: (  (  (  (  | — 圆左、平右，向左扩散 */
+
+/* 波浪左端: custom/updates + tray - 不透明度等级1 */
+#custom-updates {
+    border-radius: 1.2em 0 0 1.2em;
+    padding: 0px 0.17em 0px 0.39em; /* 3px 7px */
+    background-color: alpha(@background, 0.20);
+    color: @on_surface;
+}
+
+#tray {
+    padding: 0px 0.39em 0px 0.9em;
+    font-size: 1.11em; /* 20px */
+    background-color: alpha(@background, 0.20);
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: 0.24em;
+}
+
+/* 波浪第2段: ddcutil + privacy + audio - 不透明度等级2.5 */
+#ddcutil {
+    background-color: alpha(@background, 0.50);
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: -0.52em;
+}
+
+#custom-ddcutil-day,
+#custom-ddcutil-night,
+#custom-ddcutil-sleep,
+#custom-separator.1 {
+    color: @on_surface;
+    padding: 0px 0.33em; /* 5px */
+}
+
+#backlight {
+    color: @on_surface;
+    padding: 0px 0.28em 0px 0px; /* 5px */
+}
+
+#backlight-slider {
+    padding: 0px 0.28em 0px 0px; /* 5px */
+}
+
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+#backlight-slider trough {
+    min-height: 0.56em; /* 10px */
+    min-width: 4.44em;  /* 80px */
+    border-radius: 0.28em; /* 5px */
+    opacity: 0;
+    background-color: @background;
+}
+
+#backlight-slider highlight {
+    min-width: 0.56em; /* 10px */
+    border-radius: 0.28em; /* 5px */
+    background-color: @tertiary;
+}
+
+/* privacy - 不透明度等级2.5 */
+#privacy {
+    padding: 0px 0.39em; /* 7px */
+    background-color: alpha(@background, 0.50);
+    color: @error;
+    border-radius: 0;
+    margin-left: 0;
+}
+
+/* audio - 不透明度等级2.5 */
+#audio {
+    background-color: alpha(@background, 0.50);
+    border-radius: 0;
+    margin-left: 0;
+}
+
+#pulseaudio {
+    padding: 0px 0px 0px 0.28em; /* 5px */
+    color: @on_surface;
+}
+
+#pulseaudio-slider {
+    padding: 0px 0px 0px 0.56em; /* 10px */
+    margin: 0px;
+    color: @on_surface;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    box-shadow: none;
+    background: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 0.56em; /* 10px */
+    min-width: 4.44em; /* 80px */
+    border-radius: 0.28em; /* 5px */
+    background-color: @surface;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 0px;
+    border-radius: 0.28em; /* 5px */
+    background-color: @tertiary;
+}
+
+/* bluetooth + network（中间区域，与wfrec+screenshot同组） */
+#bluetooth,
+#bluetooth.disabled,
+#network {
+    background-color: alpha(@background, 0.50);
+    color: @on_surface;
+    padding: 0px 0.39em; /* 7px */
+}
+
+#bluetooth {
+    border-radius: 1.2em 0 0 1.2em;
+    padding: 0px 0.3em 0 0.5em; /* 7px */
+    font-size: 1.13em; /* 20px */
+}
+
+#bluetooth.disabled {
+    padding: 0px 0.2em 0px 0.46em;
+}
+
+#network {
+    padding: 0px 0.35em 0 0.3em; /* 7px */
+    font-size: 1.1em; /* 22px */
+}
+
+/* 波浪右端: powermenu - 不透明度等级5 */
+#powermenu {
+    background-color: @background;
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: -0.52em;
+}
+
+/* 波浪第3段: clock#date + battery（在modules-right中）- 不透明度等级3.5 */
+#clock.date {
+    padding: 0px 0.39em; /* 7px */
+    background-color: alpha(@background, 0.70);
+    color: @on_surface;
+    border-radius: 1.2em 0 0 1.2em;
+    margin-left: -0.52em;
+}
+
+#battery {
+    background-color: alpha(@background, 0.70);
+    color: @on_surface;
+    padding: 0px 0.39em; /* 7px */
+    border-radius: 0;
+}
+
+#battery.critical:not(.charging) {
+    background-color: alpha(@background, 0.70);
+    color: @error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    padding: 0px 0.39em; /* 7px */
+}
+
+#custom-wlogout {
+    padding: 0px 1em 0px 1em;
+    font-size: 1.39em; /* 25px */
+}
+
+#custom-wlogout,
+#custom-reboot,
+#custom-lockscreen,
+#custom-logout {
+    color: @on_surface;
+    padding: 0px 0.56em; /* 10px */
+}
+
+/* ================================================================ */
+/*                           其他                                   */
+/* ================================================================ */
+
+
+
+#custom-swaync {
+    background-color: @surface_container_high;
+    color: @on_surface_container;
+    padding: 0px 0.83em; /* 15px */
 }
