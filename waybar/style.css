@@ -115,7 +115,7 @@ window#waybar.empty #window {
 /*                           中间                                   */
 /* ================================================================ */
 
-/* 胶囊1: actions + wfrec + screenshot + clipboard */
+/* 胶囊1: bluetooth + network + wfrec + screenshot */
 #custom-actions {
     padding: 0px 0.3em 0px 0.5em; /* 7px */
     font-size: 1.35em; /* 20px */
@@ -132,8 +132,6 @@ window#waybar.empty #window {
 #custom-wfrec {
     padding: 0 0.25em; /* 7px */
     font-size: 1.1em;
-    border-radius: 1.2em 0 0 1.2em;
-    margin-left: 0.35em;
 }
 
 #custom-wallpapers {
@@ -163,7 +161,7 @@ window#waybar.empty #window {
     color: @error;
 }
 
-/* 胶囊2: idle_inhibitor + colorpicker + power-profiles */
+/* 胶囊2: idle_inhibitor + colorpicker + power-profiles + applauncher + clock */
 #power-profiles-daemon,
 #custom-colorpicker,
 #idle_inhibitor {
@@ -199,7 +197,7 @@ window#waybar.empty #window {
     color: #1aa052;
 }
 
-/* 胶囊3: applauncher - 独立胶囊 */
+/* applauncher（胶囊2内） */
 #custom-applauncher {
     font-size: 1.39em; /* 25px */
     padding: 0px 0.39em; /* 7px */
@@ -207,14 +205,42 @@ window#waybar.empty #window {
     color: @on_primary;
 }
 
-/* 胶囊4: clock - 独立胶囊 */
+/* clock（胶囊2右端） */
 #clock {
     padding: 0px 0.45em 0em 0.45em; /* 8px */
     background-color: @secondary;
     color: @on_secondary;
+    border-radius: 0 1.2em 1.2em 0;
 }
 
-/* 胶囊5: cava */
+/* 胶囊3: clock#date + battery */
+#clock.date {
+    padding: 0px 0.39em; /* 7px */
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    margin-left: 0.35em;
+    border-radius: 1.2em 0 0 1.2em;
+}
+
+#battery {
+    background-color: @surface_container;
+    color: @secondary;
+    padding: 0px 0.39em; /* 7px */
+    border-radius: 0 1.2em 1.2em 0;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @surface_container;
+    color: @error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    padding: 0px 0.39em; /* 7px */
+}
+
+/* 胶囊4: cava */
 #custom-cava {
     background-color: @surface_container_high;
     color: @primary;
@@ -345,11 +371,10 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-/* 胶囊5: bluetooth + network + battery */
+/* bluetooth + network（胶囊1左端，在中间区域） */
 #bluetooth,
 #bluetooth.disabled,
-#network,
-#battery {
+#network {
     background-color: @surface_container;
     color: @secondary;
     padding: 0px 0.39em; /* 7px */
@@ -368,22 +393,6 @@ window#waybar.empty #window {
 #network {
     padding: 0px 0.35em 0 0.3em; /* 7px */
     font-size: 1.1em; /* 22px */
-    border-radius: 0 1.2em 1.2em 0;
-}
-
-#battery {
-    border-radius: 0 1.2em 1.2em 0;
-}
-
-#battery.critical:not(.charging) {
-    background-color: @surface_container;
-    color: @error;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    padding: 0px 0.39em; /* 7px */
 }
 
 /* 胶囊6: powermenu (抽屉组) */
@@ -410,15 +419,7 @@ window#waybar.empty #window {
 /*                           其他                                   */
 /* ================================================================ */
 
-#clock.date {
-    padding: 0px 0.39em; /* 7px */
-}
 
-#custom-datelogo,
-#clock.date {
-    background-color: @secondary_container;
-    color: @on_secondary_container;
-}
 
 #custom-swaync {
     background-color: @surface_container_high;
