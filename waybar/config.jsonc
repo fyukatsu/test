@@ -15,7 +15,7 @@
         // "ext/workspaces",
         "niri/workspaces",
         "cffi/niri-taskbar",
-        "niri/window",
+        "niri/window"
         //"dwl/window",
         // "hyprland/window",
     ],
@@ -32,7 +32,7 @@
         "custom/applauncher",
         "clock",
         //"clock#date",
-        "custom/cava",
+        "custom/cava"
         //  "mpris",
     ],
     "modules-right": [
