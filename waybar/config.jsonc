@@ -20,12 +20,14 @@
         // "hyprland/window",
     ],
     "modules-center": [
+        "bluetooth",
+        "network",
 	// 这个模块是shorinNiri相关的常用命令
-	"custom/actions",
+	// "custom/actions",
         "custom/wfrec",
         "custom/screenshot",
 	//"custom/wallpapers",
-	"custom/clipboard",
+	//  "custom/clipboard",
         "idle_inhibitor",
         "custom/colorpicker",
         "power-profiles-daemon",
@@ -42,8 +44,7 @@
         "group/ddcutil",
         "privacy",
         "group/audio",
-        "bluetooth",
-        "network",
+        "clock#date",
         "battery",
         "group/powermenu"
     ]
