@@ -244,8 +244,8 @@ window#waybar.empty #window {
 /*                     RIGHT — (  (  (  (  |                        */
 /*           rounded left, flat right, expanding leftward            */
 /*                                                                   */
-/*   ( updates  tray  ( ddcutil  privacy  audio  ( date  battery  ( powermenu |
-/*        0.20               0.50                     0.70           solid
+/*   ( updates  tray  ( ddcutil  privacy  audio  ( date  battery  ( powermenu |*/
+/*        0.20               0.50                     0.70           solid*/
 /* ================================================================ */
 
 /* --- Layer 1 (outermost): updates + tray — alpha(@background, 0.20) --- */
