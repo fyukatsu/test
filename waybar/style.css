@@ -245,7 +245,7 @@ window#waybar.empty #window {
 /*           rounded left, flat right, expanding leftward            */
 /*                                                                   */
 /*   ( updates  tray  ( ddcutil  privacy  audio  ( date  battery  ( powermenu |*/
-/*  surface_container_highest  surface_container_high  surface_container   @background
+/*  surface_container_highest  surface_container_high  surface_container   @background*/
 /* ================================================================ */
 
 /* --- Layer 1 (outermost): updates + tray --- */
