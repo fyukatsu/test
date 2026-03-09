@@ -178,9 +178,9 @@ window#waybar.empty #window {
     font-size: 1.15em;
 }
 
-/* ( capsule2 left edge — transparent → alpha(@background, 0.80) */
+/* ( capsule2 left edge — transparent → @surface_container */
 #custom-left_div.1 {
-    color: alpha(@background, 0.80);
+    color: @surface_container;
     font-size: 1.39em;
     padding: 0px;
     margin-left: 0.35em;
@@ -191,7 +191,7 @@ window#waybar.empty #window {
 #power-profiles-daemon,
 #custom-applauncher,
 #clock {
-    background-color: alpha(@background, 0.80);
+    background-color: @surface_container;
     color: @on_surface;
 }
 
@@ -234,14 +234,11 @@ window#waybar.empty #window {
     padding: 0px 0.45em;
 }
 
-/* ) capsule2 right edge — alpha(@background, 0.80) → transparent */
+/* ) capsule2 right edge — @surface_container → transparent */
 #custom-right_div.1 {
-    background-color: alpha(@background, 0.80);
-    color: alpha(@background, 0.80);
+    color: @surface_container;
     font-size: 1.39em;
     padding: 0px;
-    margin-left: -0.7em;
-    padding-left: 0.7em;
 }
 
 /* ( cava left edge — transparent → alpha(@background, 0.50) */
