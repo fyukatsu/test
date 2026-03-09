@@ -245,28 +245,28 @@ window#waybar.empty #window {
 /*           rounded left, flat right, expanding leftward            */
 /*                                                                   */
 /*   ( updates  tray  ( ddcutil  privacy  audio  ( date  battery  ( powermenu |*/
-/*        0.20               0.50                     0.70           solid*/
+/*  surface_container_highest  surface_container_high  surface_container   @background
 /* ================================================================ */
 
-/* --- Layer 1 (outermost): updates + tray — alpha(@background, 0.20) --- */
+/* --- Layer 1 (outermost): updates + tray --- */
 #custom-updates {
     border-radius: 1.2em 0 0 1.2em;
     padding: 0px 0.17em 0px 0.39em;
-    background-color: alpha(@background, 0.20);
+    background-color: @surface_container_highest;
     color: @on_surface;
 }
 
 #tray {
     padding: 0px 0.39em 0px 0.17em;
     font-size: 1.11em;
-    background-color: alpha(@background, 0.20);
+    background-color: @surface_container_highest;
     color: @on_surface;
     border-radius: 0;
 }
 
-/* --- Layer 2: ddcutil + privacy + audio — alpha(@background, 0.50) --- */
+/* --- Layer 2: ddcutil + privacy + audio --- */
 #ddcutil {
-    background-color: alpha(@background, 0.50);
+    background-color: @surface_container_high;
     border-radius: 1.2em 0 0 1.2em;
     margin-left: -1.2em;
     padding-left: 1.2em;
@@ -315,14 +315,14 @@ window#waybar.empty #window {
 
 #privacy {
     padding: 0px 0.39em;
-    background-color: alpha(@background, 0.50);
+    background-color: @surface_container_high;
     color: @error;
     border-radius: 0;
     margin-left: 0;
 }
 
 #audio {
-    background-color: alpha(@background, 0.50);
+    background-color: @surface_container_high;
     border-radius: 0;
 }
 
@@ -359,24 +359,24 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-/* --- Layer 3: date + battery — alpha(@background, 0.70) --- */
+/* --- Layer 3: date + battery --- */
 #clock.date {
     padding: 0px 0.39em 0px 1.59em;
-    background-color: alpha(@background, 0.70);
+    background-color: @surface_container;
     color: @on_surface;
     border-radius: 1.2em 0 0 1.2em;
     margin-left: -1.2em;
 }
 
 #battery {
-    background-color: alpha(@background, 0.70);
+    background-color: @surface_container;
     color: @on_surface;
     padding: 0px 0.39em;
     border-radius: 0;
 }
 
 #battery.critical:not(.charging) {
-    background-color: alpha(@background, 0.70);
+    background-color: @surface_container;
     color: @error;
     animation-name: blink;
     animation-duration: 0.5s;
