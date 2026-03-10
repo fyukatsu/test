@@ -110,7 +110,7 @@ tooltip .background {
 #workspaces button {
     padding: 0 10px;
     margin: 3px 2px;
-    color: @on_surface_variant;
+    color: @tertiary_container;
     background: transparent;
     border: none;
     border-radius: 12px;
@@ -118,13 +118,13 @@ tooltip .background {
 }
 
 #workspaces button:hover {
-    background-color: alpha(@surface_bright, 0.6);
+    background-color: alpha(@on_tertiary, 0.6);
     color: @on_surface;
 }
 
 #workspaces button.active {
-    background-color: @primary;
-    color: @on_primary;
+    background-color: @tertiary;
+    color: @on_tertiary;
 }
 
 .niri-taskbar {
@@ -226,6 +226,7 @@ window#waybar.empty #window {
     border-left: 1px solid alpha(@outline_variant, 0.3);
     border-radius: 15px 0 0 15px;
     padding-left: 12px;
+    color: @tertiary;
 }
 
 #idle_inhibitor.activated {
@@ -234,10 +235,12 @@ window#waybar.empty #window {
 
 #custom-settings {
     padding: 0 8px;
+    color: @secondary;
 }
 
 #power-profiles-daemon {
     padding: 0 8px;
+    color: @tertiary;
 }
 
 #power-profiles-daemon.performance {
@@ -246,30 +249,31 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon.balanced {
-    color: @on_surface;
+    color: @tertiary;
 }
 
 #power-profiles-daemon.power-saver {
-    color: @tertiary;
+    color: @primary;
 }
 
 #custom-applauncher {
     font-size: 1.2em;
     padding: 0 12px;
+    color: @primary;
 }
 
 #clock.date {
     border-right: 1px solid alpha(@outline_variant, 0.3);
     border-radius: 0 15px 15px 0;
     padding: 0 12px 0 8px;
-    color: @primary;
+    color: @on_secondary_container;
     letter-spacing: 0.5px;
 }
 
 /* --- Cava 胶囊 --- */
 #custom-cava {
     background-color: @surface_container;
-    color: @tertiary;
+    color: @primary;
     margin: 4px 0 0 4px;
     padding: 0 8px;
     border-radius: 15px;
@@ -343,7 +347,7 @@ window#waybar.empty #window {
 /* --- Pulseaudio --- */
 .modules-right #pulseaudio {
     padding: 0 8px;
-    color: @on_primary_container;
+    color: @tertiary;
 }
 
 .modules-right #pulseaudio-slider {
@@ -385,7 +389,7 @@ window#waybar.empty #window {
 
 /* --- Memory --- */
 .modules-right #memory {
-    color: @error;
+    color: @tertiary;
 }
 
 /* --- Mako --- */
@@ -400,13 +404,13 @@ window#waybar.empty #window {
 
 /* --- Clock --- */
 .modules-right #clock {
-    color: @primary;
+    color: @secondary;
 }
 
 /* --- Battery --- */
 .modules-right #battery {
     padding: 0 12px 0 10px;
-    color: @on_surface;
+    color: @secondary;
 }
 
 #battery.critical:not(.charging) {
