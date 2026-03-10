@@ -151,21 +151,21 @@ window#waybar.empty #window {
 }
 
 #bluetooth {
-    padding: 0px 0.3em 0 0.5em;
+    padding: 0px 0.22em 0 0.4em;
     font-size: 1.13em;
 }
 
 #bluetooth.disabled {
-    padding: 0px 0.2em 0px 0.46em;
+    padding: 0px 0.15em 0px 0.36em;
 }
 
 #network {
-    padding: 0px 0.35em 0 0.3em;
+    padding: 0px 0.25em 0 0.22em;
     font-size: 1.1em;
 }
 
 #custom-wfrec {
-    padding: 0 0.25em;
+    padding: 0 0.18em;
     font-size: 1.1em;
 }
 
@@ -174,7 +174,7 @@ window#waybar.empty #window {
 }
 
 #custom-screenshot {
-    padding: 0px 0.35em;
+    padding: 0px 0.25em;
     font-size: 1.15em;
 }
 
@@ -197,19 +197,19 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    padding: 0px 0.36em;
+    padding: 0px 0.28em;
 }
 
 #idle_inhibitor.activated {
-    padding: 0px 0.4em;
+    padding: 0px 0.32em;
 }
 
 #custom-settings {
-    padding: 0px 0.36em;
+    padding: 0px 0.28em;
 }
 
 #power-profiles-daemon {
-    padding: 0px 0.4em 0em 0.36em;
+    padding: 0px 0.32em 0em 0.28em;
 }
 
 #power-profiles-daemon.performance {
@@ -228,11 +228,11 @@ window#waybar.empty #window {
 
 #custom-applauncher {
     font-size: 1.39em;
-    padding: 0px 0.85em;
+    padding: 0px 0.7em;
 }
 
 #clock {
-    padding: 0px 0.45em;
+    padding: 0px 0.36em;
 }
 
 /* ) capsule2 right edge — @surface_container → transparent */
@@ -254,7 +254,7 @@ window#waybar.empty #window {
 #custom-cava {
     background-color: transparent;
     color: @on_surface;
-    padding: 0px 0.5em;
+    padding: 0px 0.4em;
 }
 
 /* ) cava right edge — alpha(@background, 0.50) → transparent */
