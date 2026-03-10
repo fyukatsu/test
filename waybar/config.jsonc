@@ -42,7 +42,7 @@
         "cpu",
         "memory",
         "clock",
-        "group/powermenu",
-        "battery"
+        "battery",
+        "group/powermenu"
     ]
 }

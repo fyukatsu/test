@@ -268,12 +268,12 @@ window#waybar.empty #window {
 
 /* --- Cava 胶囊 --- */
 #custom-cava {
-    background-color: transparent;
+    background-color: @surface_container;
     color: @tertiary;
     margin: 4px 0 0 4px;
     padding: 0 8px;
     border-radius: 15px;
-    border: none;
+    border: 1px solid alpha(@outline_variant, 0.3);
 }
 
 /* --- Mpris --- */
@@ -343,6 +343,7 @@ window#waybar.empty #window {
 /* --- Pulseaudio --- */
 .modules-right #pulseaudio {
     padding: 0 8px;
+    color: @on_primary_container;
 }
 
 .modules-right #pulseaudio-slider {
@@ -372,6 +373,21 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
+/* --- Network --- */
+.modules-right #network {
+    color: @secondary;
+}
+
+/* --- CPU --- */
+.modules-right #cpu {
+    color: @tertiary;
+}
+
+/* --- Memory --- */
+.modules-right #memory {
+    color: @error;
+}
+
 /* --- Mako --- */
 .modules-right #custom-mako {
     padding: 0 10px 0 8px;
@@ -382,9 +398,15 @@ window#waybar.empty #window {
     padding: 0 10px 0 12px;
 }
 
+/* --- Clock --- */
+.modules-right #clock {
+    color: @primary;
+}
+
 /* --- Battery --- */
 .modules-right #battery {
     padding: 0 12px 0 10px;
+    color: @on_surface;
 }
 
 #battery.critical:not(.charging) {
@@ -407,6 +429,7 @@ window#waybar.empty #window {
 .modules-right #custom-wlogout {
     padding: 0 12px;
     font-size: 1.2em;
+    color: @error;
 }
 
 .modules-right #custom-logout {
