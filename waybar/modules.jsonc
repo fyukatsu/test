@@ -77,7 +77,7 @@
     },
     "modules": [
       "network",
-      // "bluetooth"
+      // "bluetooth",
     ],
   },
   "network": {
