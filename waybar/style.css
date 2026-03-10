@@ -10,8 +10,8 @@
  * Base font size: 15.2px — change this single value to scale everything.
  *
  * Left:   [workspaces] [taskbar  window]
- * Center: [bluetooth  network  wfrec  screenshot] [idle  settings  power  app  clock] [cava]
- * Right:  [tray | audio | mako | date | battery | powermenu]
+ * Center: [idle  settings  power  app  clock] [cava]
+ * Right:  [tray | audio | bt | net | wfrec | screenshot | mako | date | battery | powermenu]
  */
 
 /* ================================================================ */
@@ -175,36 +175,17 @@ window#waybar.empty #window {
 /*                     CENTER — capsule groups                       */
 /* ================================================================ */
 
-/* --- 左侧无背景图标群 --- */
-#bluetooth,
-#network,
-#custom-wfrec,
-#custom-screenshot {
-    background-color: @surface_container;
-    margin: 4px 0 0 0;
-    padding: 0 8px;
-    border-radius: 0;
-    border-top: 1px solid alpha(@outline_variant, 0.3);
-    border-bottom: 1px solid alpha(@outline_variant, 0.3);
-    border-left: none;
-    border-right: none;
-}
+/* --- bluetooth / network / wfrec / screenshot（已移至 right）--- */
 
 #bluetooth {
     font-size: 1.13em;
-    border-left: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 15px 0 0 15px;
-    padding-left: 12px;
 }
 
 #bluetooth.disabled {
-    padding: 0 8px 0 12px;
+    padding: 0 8px;
 }
 
 #custom-screenshot {
-    border-right: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 0 15px 15px 0;
-    padding-right: 12px;
     font-size: 1.15em;
 }
 
@@ -313,6 +294,7 @@ window#waybar.empty #window {
     border-radius: 15px;
     border: 1px solid alpha(@outline_variant, 0.3);
     margin: 4px 4px 0 2px;
+    opacity: 0.6;
 }
 
 /* 所有右侧子模块：透明背景、无独立边框/圆角 */
@@ -320,6 +302,10 @@ window#waybar.empty #window {
 .modules-right #custom-updates,
 .modules-right #pulseaudio,
 .modules-right #pulseaudio-slider,
+.modules-right #bluetooth,
+.modules-right #network,
+.modules-right #custom-wfrec,
+.modules-right #custom-screenshot,
 .modules-right #custom-mako,
 .modules-right #clock.date,
 .modules-right #battery,
