@@ -11,7 +11,7 @@
  *
  * Left:   [workspaces] [taskbar  window]
  * Center: [bluetooth  network  wfrec  screenshot] [idle  settings  power  app  clock] [cava]
- * Right:  [tray] [audio  mako] [date  battery] [powermenu]
+ * Right:  [tray | audio | mako | date | battery | powermenu]
  */
 
 /* ================================================================ */
@@ -304,44 +304,47 @@ window#waybar.empty #window {
 }
 
 /* ================================================================ */
-/*                     RIGHT — independent capsules                  */
+/*                  RIGHT — 单一胶囊（容器级圆角）                     */
 /* ================================================================ */
 
-/* --- Tray 胶囊 --- */
-#tray {
-    margin: 4px 2px 0 4px;
-    padding: 0 10px;
+/* 容器自身作为胶囊：圆角 + 边框 + 背景，子模块全部透明 */
+.modules-right {
+    background-color: @surface_container;
     border-radius: 15px;
+    border: 1px solid alpha(@outline_variant, 0.3);
+    margin: 4px 4px 0 2px;
 }
 
-#custom-updates {
-    margin: 4px 2px 0 2px;
-    padding: 0 10px;
-    border-radius: 15px;
-}
-
-/* --- Audio + Mako 胶囊 --- */
-#pulseaudio,
-#pulseaudio-slider,
-#custom-mako {
-    background-color: @surface_container_high;
-    margin: 4px 0 0 0;
-    padding: 0 8px;
+/* 所有右侧子模块：透明背景、无独立边框/圆角 */
+.modules-right #tray,
+.modules-right #custom-updates,
+.modules-right #pulseaudio,
+.modules-right #pulseaudio-slider,
+.modules-right #custom-mako,
+.modules-right #clock.date,
+.modules-right #battery,
+.modules-right #custom-wlogout,
+.modules-right #custom-reboot,
+.modules-right #custom-lockscreen,
+.modules-right #custom-logout {
+    background-color: transparent;
+    border: none;
     border-radius: 0;
-    border-top: 1px solid alpha(@outline_variant, 0.3);
-    border-bottom: 1px solid alpha(@outline_variant, 0.3);
-    border-left: none;
-    border-right: none;
+    margin: 0;
+    padding: 0 8px;
 }
 
-#pulseaudio {
-    border-left: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 15px 0 0 15px;
-    padding-left: 10px;
+/* --- Tray --- */
+.modules-right #tray {
+    padding: 0 10px;
 }
 
-#pulseaudio-slider {
-    margin: 4px 0 0 0;
+/* --- Pulseaudio --- */
+.modules-right #pulseaudio {
+    padding: 0 8px 0 10px;
+}
+
+.modules-right #pulseaudio-slider {
     padding: 0 4px 0 8px;
 }
 
@@ -368,40 +371,25 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-#custom-mako {
-    border-right: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 0 15px 15px 0;
-    padding-right: 10px;
+/* --- Mako --- */
+.modules-right #custom-mako {
+    padding: 0 10px 0 8px;
 }
 
-/* --- Date + Battery 胶囊 --- */
-#clock.date,
-#battery {
-    background-color: @surface_container;
-    margin: 4px 0 0 0;
-    padding: 0 10px;
-    border-radius: 0;
-    border-top: 1px solid alpha(@outline_variant, 0.3);
-    border-bottom: 1px solid alpha(@outline_variant, 0.3);
-    border-left: none;
-    border-right: none;
+/* --- Date --- */
+.modules-right #clock.date {
+    padding: 0 10px 0 12px;
 }
 
-#clock.date {
-    border-left: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 15px 0 0 15px;
-    padding-left: 12px;
-}
-
-#battery {
-    border-right: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 0 15px 15px 0;
-    padding-right: 12px;
+/* --- Battery --- */
+.modules-right #battery {
+    padding: 0 12px 0 10px;
 }
 
 #battery.critical:not(.charging) {
     background-color: @error;
     color: @on_error;
+    border-radius: 0;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -409,30 +397,12 @@ window#waybar.empty #window {
     animation-direction: alternate;
 }
 
-/* --- Powermenu 胶囊 --- */
-#custom-wlogout,
-#custom-reboot,
-#custom-lockscreen,
-#custom-logout {
-    background-color: @background;
-    margin: 4px 0 0 0;
-    padding: 0 10px;
-    border-radius: 0;
-    border-top: 1px solid alpha(@outline_variant, 0.3);
-    border-bottom: 1px solid alpha(@outline_variant, 0.3);
-    border-left: none;
-    border-right: none;
-}
-
-#custom-wlogout {
-    border-left: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 15px 0 0 15px;
+/* --- Powermenu（抽屉展开后也在同一胶囊内）--- */
+.modules-right #custom-wlogout {
     padding: 0 12px;
     font-size: 1.2em;
 }
 
-#custom-logout {
-    border-right: 1px solid alpha(@outline_variant, 0.3);
-    border-radius: 0 15px 15px 0;
-    padding-right: 12px;
+.modules-right #custom-logout {
+    padding: 0 12px 0 8px;
 }
