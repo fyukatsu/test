@@ -27,7 +27,7 @@
         "custom/settings",
         "power-profiles-daemon",
         "custom/applauncher",
-        "clock"
+        "clock#date",
         //  "mpris",
     ],
     "modules-right": [
@@ -41,7 +41,7 @@
         // "custom/mako",
         "cpu",
         "memory",
-        "clock#date",
+        "clock",
         "battery",
         "group/powermenu"
     ]
