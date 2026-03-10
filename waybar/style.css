@@ -28,7 +28,7 @@
 }
 
 window#waybar {
-    background: alpha(@background, 0.60);
+    background: alpha(@background, 0.75);
     color: @on_surface;
     margin: 4px 6px 0 6px;
     border-radius: 1.2em;
