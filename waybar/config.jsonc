@@ -12,11 +12,11 @@
     "modules-left": [
         // "ext/workspaces",
         "niri/workspaces",
+        "custom/cava",
         // "cffi/niri-taskbar",
-        "niri/window",
+        "niri/window"
         //"dwl/window",
         // "hyprland/window",
-        "custom/cava"
     ],
     "modules-center": [
 	// "custom/wallpapers",
