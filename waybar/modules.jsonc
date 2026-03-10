@@ -24,11 +24,9 @@
   //时钟
   "clock": {
     "interval": 60,
-    "format": "󰥔 {:%H:%M}",
-    "tooltip-format": "{:%Y/%m/%d %A}\n---\n左键：打开时钟\n右键：打开日历",
+    "format": "󰥔 {:%H:%M:%S}",
     "max-length": 25,
-    "on-click": "gnome-clocks",
-    "on-click-right": "gnome-calendar",
+    "on-click": "gnome-clocks"
   },
   "clock#date": {
     // "interval":
