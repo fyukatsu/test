@@ -335,11 +335,12 @@ window#waybar.empty #window {
 .modules-right #audio {
     padding: 0;
     margin: 0;
+    border: none;
 }
 
 /* --- Pulseaudio --- */
 .modules-right #pulseaudio {
-    padding: 0 8px 0 10px;
+    padding: 0 8px;
 }
 
 .modules-right #pulseaudio-slider {
