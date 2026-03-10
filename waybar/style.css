@@ -196,7 +196,6 @@ window#waybar.empty #window {
 }
 
 #network {
-    font-size: 1.1em;
 }
 
 #custom-wfrec {
@@ -207,12 +206,12 @@ window#waybar.empty #window {
     color: @error;
 }
 
-/* --- 中央主胶囊：idle + settings + power-profiles + applauncher + clock --- */
+/* --- 中央主胶囊：idle + settings + power-profiles + applauncher + clock#date --- */
 #idle_inhibitor,
 #custom-settings,
 #power-profiles-daemon,
 #custom-applauncher,
-#clock {
+#clock.date {
     background-color: @surface_container_high;
     margin: 4px 0 0 0;
     padding: 0 8px;
@@ -259,7 +258,7 @@ window#waybar.empty #window {
     padding: 0 12px;
 }
 
-#clock {
+#clock.date {
     border-right: 1px solid alpha(@outline_variant, 0.3);
     border-radius: 0 15px 15px 0;
     padding: 0 12px 0 8px;
@@ -314,6 +313,9 @@ window#waybar.empty #window {
 .modules-right #custom-screenshot,
 .modules-right #custom-mako,
 .modules-right #clock.date,
+.modules-right #clock,
+.modules-right #cpu,
+.modules-right #memory,
 .modules-right #battery,
 .modules-right #custom-wlogout,
 .modules-right #custom-reboot,
