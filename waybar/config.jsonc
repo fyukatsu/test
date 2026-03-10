@@ -12,10 +12,11 @@
     "modules-left": [
         // "ext/workspaces",
         "niri/workspaces",
-        "cffi/niri-taskbar",
-        "niri/window"
+        // "cffi/niri-taskbar",
+        "niri/window",
         //"dwl/window",
         // "hyprland/window",
+        "custom/cava"
     ],
     "modules-center": [
 	// "custom/wallpapers",
@@ -26,8 +27,7 @@
         "custom/settings",
         "power-profiles-daemon",
         "custom/applauncher",
-        "clock",
-        "custom/cava"
+        "clock"
         //  "mpris",
     ],
     "modules-right": [
@@ -39,6 +39,8 @@
         // "custom/wfrec",
         // "custom/screenshot",
         // "custom/mako",
+        "cpu",
+        "memory",
         "clock#date",
         "battery",
         "group/powermenu"
