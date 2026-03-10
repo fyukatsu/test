@@ -151,21 +151,21 @@ window#waybar.empty #window {
 }
 
 #bluetooth {
-    padding: 0px 0.22em 0 0.4em;
+    padding: 0px 0.28em 0 0.46em;
     font-size: 1.13em;
 }
 
 #bluetooth.disabled {
-    padding: 0px 0.15em 0px 0.36em;
+    padding: 0px 0.2em 0px 0.42em;
 }
 
 #network {
-    padding: 0px 0.25em 0 0.22em;
+    padding: 0px 0.3em 0 0.28em;
     font-size: 1.1em;
 }
 
 #custom-wfrec {
-    padding: 0 0.18em;
+    padding: 0 0.24em;
     font-size: 1.1em;
 }
 
@@ -174,7 +174,7 @@ window#waybar.empty #window {
 }
 
 #custom-screenshot {
-    padding: 0px 0.25em;
+    padding: 0px 0.3em;
     font-size: 1.15em;
 }
 
@@ -213,7 +213,7 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon.performance {
-    color: @error;
+    color: @on_surface;
     font-size: 1.28em;
     padding: 0px 0.32em 0px 0.45em;
 }
@@ -223,7 +223,7 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon.power-saver {
-    color: @tertiary;
+    color: @on_surface;
 }
 
 #custom-applauncher {
