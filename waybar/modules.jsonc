@@ -77,17 +77,17 @@
     },
     "modules": [
       "network",
-      "bluetooth"
+      // "bluetooth"
     ],
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon} ({signalStrength}%)",
+    "format-wifi": "{icon}({signalStrength}%)",
     "format-ethernet": "{icon}",
     "format-icons": {
-      "disconnected": "󰖪",
       "wifi": "",
-      "ethernet": "",
+      "disconnected": "󰤮",
+      "ethernet": "󰈀",
     },
     //鼠标悬浮在wifi图标上会显示wifi名称、信号强度、ip地址、设备名
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} : {ipaddr}\n---\n左键：打开面板\n右键：打开高级网络配置工具",
@@ -98,13 +98,13 @@
   },
   "bluetooth": {
     //蓝牙关闭状态下的图标和鼠标悬浮时的提示
-    "format-disabled": "",
+    "format-disabled": "",
     "tooltip-format-disabled": "右键：启用蓝牙",
-    "format": "",
+    "format": "",
     "tooltip-format-on": "左键：打开面板\n右键：禁用蓝牙",
     //连接状态下的图标和提示
-    "format-connected": "",
-    "tooltip-format-connected": " {device_alias}\n---\n左键：打开面板",
+    "format-connected": "",
+    "tooltip-format-connected": " {device_alias}\n---\n左键：打开面板",
     //点击功能
     "on-click-right": "~/.config/waybar/scripts/toggle-bluetooth.sh",
     "on-click": "kitty --class bluetui  -e bluetui",
@@ -151,11 +151,11 @@
   },
   "pulseaudio": {
     "tooltip-format": "左键：静音\n右键：关闭麦克风\n中键：打开面板",
-    "format": "{icon} {volume}% {format_source} ",
-    "format-bluetooth": " {volume}% {format_source} ",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
     "format-source": "",
     "format-source-muted": "",
-    "format-muted": " {format_source} ",
+    "format-muted": "",
     "format-icons": {
       "headphone": "",
       "headset": "",
