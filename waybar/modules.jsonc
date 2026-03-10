@@ -101,7 +101,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} : {ipaddr}\n---\n左键：打开面板\n右键：打开高级网络配置工具",
     "tooltip-format-ethernet": "{ifname} : {ipaddr}\n---\n左键：打开面板\n右键：打开高级网络配置工具",
     "tooltip-format-disconnected": "网络未连接\n---\n左键：打开面板\n右键：打开高级网络配置工具",
-    "on-click": "kitty --class impala -e impala",
+    "on-click": "kitty --class nmtui -e nmtui",
     "on-click-right": "nm-connection-editor",
   },
   "bluetooth": {
@@ -159,9 +159,9 @@
   },
   "pulseaudio": {
     "tooltip-format": "左键：静音\n右键：关闭麦克风\n中键：打开面板",
-    "format": "{icon} {format_source} ",
-    "format-bluetooth": " {format_source} ",
-    "format-source": "{volume}%",
+    "format": "{icon} {volume}% {format_source} ",
+    "format-bluetooth": " {volume}% {format_source} ",
+    "format-source": "",
     "format-source-muted": "",
     "format-muted": " {format_source} ",
     "format-icons": {
@@ -352,7 +352,6 @@
     "tooltip": false,
     "format": "{}",
     "exec": "~/.config/waybar/scripts/cava.sh",
-    "exec-on-event": false,
     "on-click": "playerctl play-pause "
   },
   //禁止熄屏
