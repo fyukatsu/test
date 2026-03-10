@@ -252,7 +252,7 @@ window#waybar.empty #window {
 
 /* Cava */
 #custom-cava {
-    background-color: @surface_container;
+    background-color: transparent;
     color: @on_surface;
     padding: 0px 0.5em;
 }

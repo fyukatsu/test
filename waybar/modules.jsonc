@@ -352,6 +352,7 @@
     "tooltip": false,
     "format": "{}",
     "exec": "~/.config/waybar/scripts/cava.sh",
+    "exec-on-event": false,
     "on-click": "playerctl play-pause "
   },
   //禁止熄屏
