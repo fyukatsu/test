@@ -347,7 +347,7 @@ window#waybar.empty #window {
 /* --- Pulseaudio --- */
 .modules-right #pulseaudio {
     padding: 0 8px;
-    color: @tertiary;
+    color: @primary;
 }
 
 .modules-right #pulseaudio-slider {
@@ -379,12 +379,12 @@ window#waybar.empty #window {
 
 /* --- Network --- */
 .modules-right #network {
-    color: @secondary;
+    color: @on_surface_variant;
 }
 
 /* --- CPU --- */
 .modules-right #cpu {
-    color: @tertiary;
+    color: @on_primary_container;
 }
 
 /* --- Memory --- */
@@ -410,7 +410,7 @@ window#waybar.empty #window {
 /* --- Battery --- */
 .modules-right #battery {
     padding: 0 12px 0 10px;
-    color: @secondary;
+    color: @on_secondary_container;
 }
 
 #battery.critical:not(.charging) {
