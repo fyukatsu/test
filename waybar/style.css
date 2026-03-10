@@ -190,6 +190,7 @@ window#waybar.empty #window {
 #custom-settings,
 #power-profiles-daemon,
 #custom-applauncher,
+#idle_inhibitor,
 #clock {
     background-color: @surface_container;
     color: @on_surface;
@@ -226,8 +227,8 @@ window#waybar.empty #window {
 }
 
 #custom-applauncher {
-    font-size: 1.39em;
-    padding: 0px 0.39em;
+    font-size: 1.15em;
+    padding: 0px 0.85em;
 }
 
 #clock {
@@ -251,7 +252,7 @@ window#waybar.empty #window {
 
 /* Cava */
 #custom-cava {
-    background-color: alpha(@background, 0.50);
+    background-color: @surface_container;
     color: @on_surface;
     padding: 0px 0.5em;
 }
