@@ -38,7 +38,8 @@
         "custom/applauncher",
         "clock",
         "custom/right_div#1",
-        "custom/cava"
+        "custom/cava",
+        "custom/right_div#2"
         //  "mpris",
     ],
     "modules-right": [
