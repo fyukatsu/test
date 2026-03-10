@@ -82,7 +82,7 @@
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon} {essid} ({signalStrength}%)",
+    "format-wifi": "{icon} ({signalStrength}%)",
     "format-ethernet": "{icon}",
     "format-icons": {
       "disconnected": "󰖪",

@@ -35,10 +35,10 @@
         "tray",
         "group/audio",
         "network",
-        "bluetooth",
+        // "bluetooth",
         // "custom/wfrec",
         // "custom/screenshot",
-        "custom/mako",
+        // "custom/mako",
         "clock#date",
         "battery",
         "group/powermenu"
