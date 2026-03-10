@@ -78,7 +78,7 @@
     "modules": [
       "network",
       // "bluetooth",
-    ],
+    ]
   },
   "network": {
     "format-disconnected": "{icon}",
