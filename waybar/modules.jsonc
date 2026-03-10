@@ -6,31 +6,31 @@
       "critical": 20,
     },
     "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}% ",
+    "format-charging": " {capacity}% ",
     "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂂",
-      "󰁹"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
     "tooltip-format": "剩余电量：{capacity}%\n充 放 电 ：{power}\n可用时间：{timeTo}\n---\n电池健康度：{health}%",
   },
   //时钟
   "clock": {
     "interval": 60,
-    "format": "󰥔 {:%H:%M:%S}",
+    "format": " {:%H:%M:%S}",
     "max-length": 25,
     "on-click": "gnome-clocks"
   },
   "clock#date": {
     // "interval":
-    "format": "󰸗 {:%m/%d %A}",
+    "format": " {:%m/%d %A}",
     // "timezone":
     // "timezones":
     // "locale":
@@ -58,7 +58,7 @@
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "󰜋",
+      "active": "",
       "default": "",
     },
   },
@@ -82,18 +82,12 @@
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon}",
+    "format-wifi": "{icon} {essid} ({signalStrength}%)",
     "format-ethernet": "{icon}",
     "format-icons": {
-      "disconnected": "󰤮",
-      "wifi": [
-        "󰤯",
-        "󰤟",
-        "󰤢",
-        "󰤥",
-        "󰤨"
-      ],
-      "ethernet": "󰈀",
+      "disconnected": "󰖪",
+      "wifi": "",
+      "ethernet": "",
     },
     //鼠标悬浮在wifi图标上会显示wifi名称、信号强度、ip地址、设备名
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} : {ipaddr}\n---\n左键：打开面板\n右键：打开高级网络配置工具",
@@ -104,13 +98,13 @@
   },
   "bluetooth": {
     //蓝牙关闭状态下的图标和鼠标悬浮时的提示
-    "format-disabled": "󰂲",
+    "format-disabled": "",
     "tooltip-format-disabled": "右键：启用蓝牙",
-    "format": "󰂯",
+    "format": "",
     "tooltip-format-on": "左键：打开面板\n右键：禁用蓝牙",
     //连接状态下的图标和提示
-    "format-connected": "󰂱",
-    "tooltip-format-connected": "󰂱 {device_alias}\n---\n左键：打开面板",
+    "format-connected": "",
+    "tooltip-format-connected": " {device_alias}\n---\n左键：打开面板",
     //点击功能
     "on-click-right": "~/.config/waybar/scripts/toggle-bluetooth.sh",
     "on-click": "kitty --class bluetui  -e bluetui",
@@ -121,8 +115,8 @@
     "tooltip-format": "当前性能模式：{profile}\n---\n左键：切换性能模式",
     "tooltip": true,
     "format-icons": {
-      "performance": "󱐋",
-      "balanced": "",
+      "performance": "",
+      "balanced": "",
       "power-saver": "",
     },
   },
@@ -161,7 +155,7 @@
     "format-bluetooth": " {volume}% {format_source} ",
     "format-source": "",
     "format-source-muted": "",
-    "format-muted": " {format_source} ",
+    "format-muted": " {format_source} ",
     "format-icons": {
       "headphone": "",
       "headset": "",
@@ -220,27 +214,27 @@
   },
   "custom/wlogout": {
     "tooltip": false,
-    "format": "󰐥",
+    "format": "",
     "on-click": "wlogout",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
   "custom/lockscreen": {
     "tooltip": false,
-    "format": "",
+    "format": "",
     "on-click": "swaylock || hyprlock",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
   "custom/reboot": {
     "tooltip": false,
-    "format": "",
+    "format": "",
     "on-click": "systemctl reboot",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
   "custom/logout": {
-    "format": "󰈆",
+    "format": "",
     "on-click": "niri msg action quit",
     "tooltip": false,
     "on-scroll-up": "true",
@@ -330,9 +324,9 @@
     "format": "",
     "on-click": "makoctl restore",
   },
-  //control-center 
+  //control-center 
   "custom/settings": {
-    "format": "",
+    "format": "",
     "on-click": "better-control",
     "tooltip-format": "左键：打开设置中心",
   },
@@ -412,7 +406,7 @@
   "ext/workspaces": {
     "format": "{icon}",
     //"format-icons": {
-    //        "active": "󰜋",
+    //        "active": "",
     //        "default": ""
     //    },
     "ignore-hidden": true,
