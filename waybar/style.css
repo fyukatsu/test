@@ -69,9 +69,7 @@ tooltip .background {
 
 #workspaces,
 #window,
-.niri-taskbar,
-#custom-cava,
-#mpris {
+#custom-cava {
     background-color: @surface_container;
     color: @on_surface;
     border: 1px solid alpha(@outline_variant, 0.3);
@@ -107,41 +105,6 @@ tooltip .background {
     color: @on_tertiary;
 }
 
-.niri-taskbar {
-    margin: 4px 2px 0 2px;
-    padding: 0 0 0 4px;
-    border-radius: 15px;
-}
-
-.niri-taskbar button {
-    border: none;
-    border-radius: 10px;
-}
-
-.niri-taskbar button:hover {
-    background: alpha(@surface_bright, 0.6);
-}
-
-.niri-taskbar button.focused {
-    background: @surface;
-}
-
-.niri-taskbar button.urgent {
-    background-color: @tertiary;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes blink {
-    to {
-        background-color: @primary;
-        color: @error;
-    }
-}
-
 #window {
     padding: 0 12px;
     margin: 4px 2px 0 2px;
@@ -168,6 +131,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     border: 1px solid alpha(@outline_variant, 0.3);
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 #center_capsule > * {
@@ -232,19 +197,6 @@ window#waybar.empty #window {
     border: 1px solid alpha(@outline_variant, 0.3);
 }
 
-/* --- Mpris --- */
-#mpris {
-    margin: 4px 2px 0 4px;
-    padding: 0 10px;
-    border-radius: 15px;
-    color: @primary;
-    font-style: italic;
-}
-
-#mpris.paused {
-    color: @on_surface_variant;
-}
-
 /* ================================================================ */
 /*                  RIGHT — 胶囊 group 容器                          */
 /* ================================================================ */
@@ -255,6 +207,15 @@ window#waybar.empty #window {
     border: 1px solid alpha(@outline_variant, 0.3);
     margin: 4px 4px 0 2px;
     padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#right_capsule > * {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 8px;
 }
 
 #pulseaudio-slider slider {
@@ -280,124 +241,75 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-/* --- Right capsule module styling matches legacy layout --- */
-.modules-right #tray,
-.modules-right #custom-updates,
-.modules-right #pulseaudio,
-.modules-right #pulseaudio-slider,
-.modules-right #bluetooth,
-.modules-right #network,
-.modules-right #custom-wfrec,
-.modules-right #custom-screenshot,
-.modules-right #custom-mako,
-.modules-right #clock.date,
-.modules-right #clock,
-.modules-right #cpu,
-.modules-right #memory,
-.modules-right #battery,
-.modules-right #custom-wlogout,
-.modules-right #custom-reboot,
-.modules-right #custom-lockscreen,
-.modules-right #custom-logout {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    margin: 0;
-    padding: 0 8px;
-}
-
 /* --- Tray --- */
-.modules-right #tray {
+#right_capsule #tray {
     padding: 0 10px;
 }
 
 /* --- Audio group (drawer) --- */
-.modules-right #audio {
+#right_capsule #audio {
     padding: 0;
     margin: 0;
     border: none;
 }
 
 /* --- Pulseaudio --- */
-.modules-right #pulseaudio {
-    padding: 0 8px;
+#right_capsule #pulseaudio {
     color: @primary;
 }
 
-.modules-right #pulseaudio-slider {
+#right_capsule #pulseaudio-slider {
     padding: 0 4px 0 8px;
 }
 
 /* --- Connectivity & utilities --- */
-.modules-right #bluetooth {
+#right_capsule #bluetooth {
     font-size: 1.13em;
 }
 
-.modules-right #bluetooth.disabled {
-    padding: 0 8px;
-}
-
-.modules-right #custom-screenshot {
-    font-size: 1.15em;
-}
-
-.modules-right #network {
+#right_capsule #network {
     color: @on_surface_variant;
 }
 
-.modules-right #custom-wfrec {
-    font-size: 1.1em;
-}
-
-.modules-right #custom-wfrec.recording {
-    color: @error;
-}
-
 /* --- System stats --- */
-.modules-right #cpu {
+#right_capsule #cpu {
     color: @on_primary_container;
 }
 
-.modules-right #memory {
+#right_capsule #memory {
     color: @tertiary;
 }
 
-/* --- Misc --- */
-.modules-right #custom-mako {
-    padding: 0 10px 0 8px;
-}
-
-.modules-right #clock.date {
+/* --- Clock & battery --- */
+#right_capsule #clock {
     padding: 0 10px 0 12px;
-}
-
-.modules-right #clock {
     color: @secondary;
 }
 
-.modules-right #battery {
+#right_capsule #battery {
     padding: 0 12px 0 10px;
     color: @on_secondary_container;
 }
 
-.modules-right #battery.critical:not(.charging) {
+#right_capsule #battery.critical:not(.charging) {
     background-color: transparent;
     color: @on_error;
-    border-radius: 0;
 }
 
 /* --- Powermenu（抽屉展开后也在同一胶囊内）--- */
-.modules-right #powermenu {
+#right_capsule #powermenu {
     padding: 0;
     margin: 0;
 }
 
-.modules-right #custom-wlogout {
+#right_capsule #custom-wlogout {
     padding: 0 12px;
     font-size: 1.2em;
     color: @error;
 }
 
-.modules-right #custom-logout {
+#right_capsule #custom-reboot,
+#right_capsule #custom-logout,
+#right_capsule #custom-lockscreen {
     padding: 0 12px 0 8px;
 }

@@ -1,7 +1,6 @@
 {
     "include": [
-        "modules.jsonc",
-        "modules-dividers.jsonc"
+        "modules.jsonc"
     ],
     "layer": "top",
     //"output": "DP-2",
@@ -10,24 +9,14 @@
     // "height": 30,
     "reload_style_on_change": true,
     "modules-left": [
-        // "ext/workspaces",
         "niri/workspaces",
         "custom/cava",
-        // "cffi/niri-taskbar",
         "niri/window"
-        //"dwl/window",
-        // "hyprland/window",
     ],
     "modules-center": [
-	// "custom/wallpapers",
-	// "custom/clipboard",
-    	// "custom/actions",
-        // "custom/colorpicker",
         "group/center_capsule"
-        //  "mpris",
     ],
     "modules-right": [
-        // "custom/updates",
         "group/right_capsule"
     ]
 }
