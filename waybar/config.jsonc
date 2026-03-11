@@ -33,14 +33,14 @@
     "modules-right": [
         // "custom/updates",
         "tray",
-        "group/audio",
+        "cpu",
+        "memory",
         "network",
         "bluetooth",
+        "group/audio",
         // "custom/wfrec",
         // "custom/screenshot",
         // "custom/mako",
-        "cpu",
-        "memory",
         "clock",
         "battery",
         "group/powermenu"
