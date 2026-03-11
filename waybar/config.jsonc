@@ -23,6 +23,7 @@
 	// "custom/clipboard",
     	// "custom/actions",
         // "custom/colorpicker",
+        "custom/wttr",
         "idle_inhibitor",
         "custom/settings",
         "power-profiles-daemon",
