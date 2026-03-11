@@ -23,7 +23,7 @@
 	// "custom/clipboard",
     	// "custom/actions",
         // "custom/colorpicker",
-        "custom/weather",
+        "custom/get_weather",
         "idle_inhibitor",
         "custom/settings",
         "power-profiles-daemon",
