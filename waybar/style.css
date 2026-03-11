@@ -137,26 +137,26 @@ window#waybar.empty #window {
     background-color: transparent;
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 0 6px;
 }
 
 #center_capsule #custom-get_weather {
-    padding: 0 8px 0 12px;
+    padding: 0 6px 0 10px;
     color: @primary;
 }
 
 #center_capsule #idle_inhibitor {
-    padding: 0 8px;
+    padding: 0 6px;
     color: @tertiary;
 }
 
 #center_capsule #custom-settings {
-    padding: 0 8px;
+    padding: 0 6px;
     color: @secondary;
 }
 
 #center_capsule #power-profiles-daemon {
-    padding: 0 8px;
+    padding: 0 6px;
     color: @tertiary;
 }
 
@@ -175,12 +175,12 @@ window#waybar.empty #window {
 
 #center_capsule #custom-applauncher {
     font-size: 1.2em;
-    padding: 0 12px;
+    padding: 0 10px;
     color: @primary;
 }
 
 #center_capsule #clock.date {
-    padding: 0 12px 0 8px;
+    padding: 0 10px 0 6px;
     color: @on_secondary_container;
     letter-spacing: 0.5px;
 }
@@ -211,11 +211,7 @@ window#waybar.empty #window {
     background-color: transparent;
     border: none;
     margin: 0;
-    padding: 0 8px;
-}
-
-#right_capsule > * + * {
-    margin-left: 8px;
+    padding: 0 6px;
 }
 
 #pulseaudio-slider slider {
@@ -248,17 +244,13 @@ window#waybar.empty #window {
 
 /* --- Audio group (drawer) --- */
 #right_capsule #audio {
-    padding: 0;
+    padding: 0 6px;
     margin: 0;
     border: none;
 }
 
 #right_capsule #audio > * {
-    padding: 0 8px;
-}
-
-#right_capsule #audio > * + * {
-    margin-left: 8px;
+    padding: 0 6px;
 }
 
 /* --- Specific spacing for compact indicators --- */
@@ -276,25 +268,29 @@ window#waybar.empty #window {
 }
 
 #right_capsule #pulseaudio-slider {
-    padding: 0 4px 0 8px;
+    padding: 0 4px 0 6px;
 }
 
 /* --- Connectivity & utilities --- */
 #right_capsule #bluetooth {
     font-size: 1.13em;
+    padding: 0 6px;
 }
 
 #right_capsule #network {
     color: @on_surface_variant;
+    padding: 0 6px;
 }
 
 /* --- System stats --- */
 #right_capsule #cpu {
     color: @on_primary_container;
+    padding: 0 6px;
 }
 
 #right_capsule #memory {
     color: @tertiary;
+    padding: 0 6px;
 }
 
 /* --- Clock & battery --- */
