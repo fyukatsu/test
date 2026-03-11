@@ -234,12 +234,13 @@ window#waybar.empty #window {
 #pulseaudio-slider highlight {
     min-width: 0px;
     border-radius: 0.28em;
-    background-color: @tertiary;
+    background-color: @primary_fixed_dim;
 }
 
 /* --- Tray --- */
 #right_capsule #tray {
     padding: 0 10px;
+    color: @secondary_fixed_dim;
 }
 
 /* --- Audio group (drawer) --- */
@@ -263,8 +264,9 @@ window#waybar.empty #window {
 }
 
 /* --- Pulseaudio --- */
+#right_capsule #audio,
 #right_capsule #pulseaudio {
-    color: @primary;
+    color: @primary_fixed_dim;
 }
 
 #right_capsule #pulseaudio-slider {
@@ -275,11 +277,15 @@ window#waybar.empty #window {
 #right_capsule #bluetooth {
     font-size: 1.13em;
     padding: 0 6px;
-    color: @on_surface_variant;
+    color: @outline;
 }
 
 #right_capsule #bluetooth.connected {
-    color: #4da3ff;
+    color: @primary_fixed;
+}
+
+#right_capsule #bluetooth.disabled {
+    color: alpha(@outline, 0.5);
 }
 
 #right_capsule #network {
@@ -292,7 +298,7 @@ window#waybar.empty #window {
 }
 
 #right_capsule #network.ethernet {
-    color: @tertiary;
+    color: @tertiary_fixed_dim;
 }
 
 #right_capsule #network.disconnected {
@@ -301,19 +307,19 @@ window#waybar.empty #window {
 
 /* --- System stats --- */
 #right_capsule #cpu {
-    color: @on_primary_container;
+    color: @primary_container;
     padding: 0 6px;
 }
 
 #right_capsule #memory {
-    color: @tertiary;
+    color: @tertiary_fixed_dim;
     padding: 0 6px;
 }
 
 /* --- Clock & battery --- */
 #right_capsule #clock {
     padding: 0 10px 0 12px;
-    color: @secondary;
+    color: @secondary_fixed_dim;
 }
 
 #right_capsule #battery {
@@ -342,4 +348,16 @@ window#waybar.empty #window {
 #right_capsule #custom-logout,
 #right_capsule #custom-lockscreen {
     padding: 0 12px 0 8px;
+}
+
+#right_capsule #custom-reboot {
+    color: @tertiary;
+}
+
+#right_capsule #custom-logout {
+    color: @secondary;
+}
+
+#right_capsule #custom-lockscreen {
+    color: @primary_fixed;
 }
