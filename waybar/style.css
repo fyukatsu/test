@@ -190,18 +190,22 @@ window#waybar.empty #window {
 }
 
 #center_capsule #custom-get_weather {
+    padding: 0 8px 0 12px;
     color: @primary;
 }
 
 #center_capsule #idle_inhibitor {
+    padding: 0 8px;
     color: @tertiary;
 }
 
 #center_capsule #custom-settings {
+    padding: 0 8px;
     color: @secondary;
 }
 
 #center_capsule #power-profiles-daemon {
+    padding: 0 8px;
     color: @tertiary;
 }
 
@@ -220,10 +224,12 @@ window#waybar.empty #window {
 
 #center_capsule #custom-applauncher {
     font-size: 1.2em;
+    padding: 0 12px;
     color: @primary;
 }
 
 #center_capsule #clock.date {
+    padding: 0 12px 0 8px;
     color: @on_secondary_container;
     letter-spacing: 0.5px;
 }
@@ -356,6 +362,10 @@ window#waybar.empty #window {
 /* --- Misc --- */
 #right_capsule #custom-mako {
     padding: 0 10px 0 8px;
+}
+
+#right_capsule #clock.date {
+    padding: 0 10px 0 12px;
 }
 
 #right_capsule #clock {
