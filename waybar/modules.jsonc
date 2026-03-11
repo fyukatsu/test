@@ -222,7 +222,7 @@
   "custom/lockscreen": {
     "tooltip": false,
     "format": "",
-    "on-click": "swaylock || hyprlock",
+    "on-click": "hyprlock || swaylock",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
