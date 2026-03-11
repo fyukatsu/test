@@ -147,6 +147,18 @@
     "tooltip": false,
     "exec": "~/.local/share/scripts/get_weather/get_weather.py"
   },
+  //中央胶囊 group
+  "group/center_capsule": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/get_weather",
+      "idle_inhibitor",
+      "custom/settings",
+      "power-profiles-daemon",
+      "custom/applauncher",
+      "clock#date"
+    ]
+  },
   //声音模块
   "group/audio": {
     "orientation": "inherit",
@@ -249,6 +261,25 @@
     "tooltip": false,
     "on-scroll-up": "true",
     "on-scroll-down": "true"
+  },
+  //右侧胶囊 group
+  "group/right_capsule": {
+    "orientation": "inherit",
+    "modules": [
+      // "custom/updates",
+      "tray",
+      "cpu",
+      "memory",
+      "network",
+      "bluetooth",
+      "group/audio",
+      // "custom/wfrec",
+      // "custom/screenshot",
+      // "custom/mako",
+      "clock",
+      "battery",
+      "group/powermenu"
+    ]
   },
   //内屏亮度
   "backlight/slider": {

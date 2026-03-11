@@ -23,27 +23,11 @@
 	// "custom/clipboard",
     	// "custom/actions",
         // "custom/colorpicker",
-        "custom/get_weather",
-        "idle_inhibitor",
-        "custom/settings",
-        "power-profiles-daemon",
-        "custom/applauncher",
-        "clock#date"
+        "group/center_capsule"
         //  "mpris",
     ],
     "modules-right": [
         // "custom/updates",
-        "tray",
-        "cpu",
-        "memory",
-        "network",
-        "bluetooth",
-        "group/audio",
-        // "custom/wfrec",
-        // "custom/screenshot",
-        // "custom/mako",
-        "clock",
-        "battery",
-        "group/powermenu"
+        "group/right_capsule"
     ]
 }
