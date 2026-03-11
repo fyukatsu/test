@@ -214,6 +214,10 @@ window#waybar.empty #window {
     padding: 0 8px;
 }
 
+#right_capsule > * + * {
+    margin-left: 4px;
+}
+
 #pulseaudio-slider slider {
     min-height: 0px;
     min-width: 0px;
@@ -247,6 +251,14 @@ window#waybar.empty #window {
     padding: 0;
     margin: 0;
     border: none;
+}
+
+#right_capsule #audio > * {
+    padding: 0 8px;
+}
+
+#right_capsule #audio > * + * {
+    margin-left: 4px;
 }
 
 /* --- Pulseaudio --- */
