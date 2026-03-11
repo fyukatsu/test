@@ -19,7 +19,7 @@
       "",
       ""
     ],
-    "tooltip-format": "剩余电量：{capacity}%\n充 放 电 ：{power}\n可用时间：{timeTo}\n---\n电池健康度：{health}%",
+    "tooltip-format": "剩余电量: {capacity}%\n充放电: {power}\n可用时间: {timeTo}\n电池健康度: {health}%",
   },
   //时钟
   "clock": {
@@ -82,7 +82,7 @@
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon} {signalStrength}%",
+    "format-wifi": "{icon}",
     "format-ethernet": "{icon}",
     "format-icons": {
       "wifi": [
@@ -99,8 +99,8 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} : {ipaddr}",
     "tooltip-format-ethernet": "{ifname} : {ipaddr}",
     "tooltip-format-disconnected": "网络未连接",
-    "on-click": "kitty --class nmtui -e nmtui",
-    "on-click-right": "nm-connection-editor",
+    "on-click": "kitty --class impala -e impala",
+    "on-click-right": "nm-connection-editor"
   },
   "bluetooth": {
     "format": "",
@@ -109,12 +109,12 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "kitty --app-id bluetui -e bluetui" // 点击打开蓝牙管理
+    "on-click": "kitty --class bluetui -e bluetui" // 点击打开蓝牙管理
     },
   //左键循环切换性能模式
   "power-profiles-daemon": {
     "format": "{icon}",
-    "tooltip-format": "当前性能模式：{profile}\n---\n左键：切换性能模式",
+    "tooltip-format": "当前性能模式: {profile}\n---\n左键: 切换性能模式",
     "tooltip": true,
     "format-icons": {
       "performance": "",
@@ -125,7 +125,7 @@
   //截图
   "custom/screenshot": {
     "format": "",
-    "tooltip-format": "左键：快速截图（仅保存到剪贴板）\n右键：打开截图菜单\n中键：打开长截图菜单",
+    "tooltip-format": "左键: 快速截图（仅保存到剪贴板）\n右键: 打开截图菜单\n中键: 打开长截图菜单",
     "on-click": "~/.config/waybar/scripts/screenshot.sh",
     "on-click-right": "~/.config/waybar/scripts/power-screenshot.sh",
     "on-click-middle": "~/.config/waybar/scripts/longshot-sh/longshot.sh"
@@ -137,7 +137,7 @@
     //"interval": 1,                 // 每秒刷新一次
     "signal": 9, // 与脚本里的 WAYBAR_SIG 对应
     "tooltip": true,
-    "on-click": "~/.config/waybar/scripts/wf-recorder.sh toggle", // 左键：开始/停止
+    "on-click": "~/.config/waybar/scripts/wf-recorder.sh toggle", // 左键: 开始/停止
     "on-click-right": "~/.config/waybar/scripts/wf-recorder.sh stop"
   },
   //声音模块
@@ -152,7 +152,7 @@
     ],
   },
   "pulseaudio": {
-    "tooltip-format": "左键：静音\n右键：关闭麦克风\n中键：打开面板",
+    "tooltip-format": "左键: 静音\n右键: 关闭麦克风\n中键: 打开面板",
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}%",
     "format-source": "",
@@ -195,7 +195,7 @@
   },
   //logo+程序启动器
   "custom/applauncher": {
-    "tooltip-format": "左键：软件启动菜单\n右键：打开终端\n中键：启用/禁用niri背景自动模糊",
+    "tooltip-format": "左键: 软件启动菜单\n右键: 打开终端\n中键: 启用/禁用niri背景自动模糊",
     "format": "󰣇",
     "on-click": "fuzzel",
     "on-click-right":"kitty || ghostty || alacritty || foot || konsole",
@@ -280,7 +280,7 @@
     ],
   },
   "custom/ddcutil-day": {
-    "tooltip-format": "左键：100%外接屏幕亮度\n右键：切换护眼模式",
+    "tooltip-format": "左键: 100%外接屏幕亮度\n右键: 切换护眼模式",
     "format": "󰃠",
     "on-click": "ddcutil --display 1 setvcp 10 100 ",
     "on-click-right": "~/.local/bin/toggle-wlsunset",
@@ -288,14 +288,14 @@
     "on-scroll-down": "true"
   },
   "custom/ddcutil-night": {
-    "tooltip-format": "左键：65%外接屏幕亮度",
+    "tooltip-format": "左键: 65%外接屏幕亮度",
     "format": "󰃟",
     "on-click": "ddcutil --display 1 setvcp 10 65 ",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
   "custom/ddcutil-sleep": {
-    "tooltip-format": "左键：5%外接屏幕亮度",
+    "tooltip-format": "左键: 5%外接屏幕亮度",
     "format": "󰃞",
     "on-click": "ddcutil --display 1 setvcp 10 5 ",
     "on-scroll-up": "true",
@@ -331,7 +331,7 @@
   "custom/settings": {
     "format": "",
     "on-click": "better-control",
-    "tooltip-format": "左键：打开设置中心",
+    "tooltip-format": "左键: 打开设置中心",
   },
   //获取屏幕颜色colorpicker
   "custom/colorpicker": {
@@ -340,7 +340,7 @@
     "on-click": "hyprpicker -a && pw-play /usr/share/sounds/freedesktop/stereo/message.oga",
     "on-click-middle":"~/.config/scripts/matugen-select-type.sh",
     "on-click-right":"waypaper",
-    "tooltip-format":"左键：提取颜色\n右键：打开壁纸切换器\n中键：切换系统配置方案",
+    "tooltip-format":"左键: 提取颜色\n右键: 打开壁纸切换器\n中键: 切换系统配置方案",
   },
   //音频可视化
   "custom/cava": {
@@ -426,12 +426,12 @@
     "on-click":"kitty --class shorinclip -e shorinclip",
     "on-click-middle":"pkill wl-paste || true && wl-paste --watch cliphist store && sleep 0.5 && systemctl restart --user clipsync-git",
     "on-click-right":"rm -f ~/.cache/cliphist/db",
-    "tooltip-format":"左键：打开剪贴板\n右键：清除剪贴板历史\n中键：重启剪贴板后台服务"
+    "tooltip-format":"左键: 打开剪贴板\n右键: 清除剪贴板历史\n中键: 重启剪贴板后台服务"
   },
   // 壁纸切换
  "custom/wallpapers":{
     "format":"󰸉",
-    "tooltip-format":"左键：打开壁纸切换器\n右键：随机切换壁纸\n中键：随机下载动漫壁纸",
+    "tooltip-format":"左键: 打开壁纸切换器\n右键: 随机切换壁纸\n中键: 随机下载动漫壁纸",
     "on-click":"waypaper",
     "on-click-right":"waypaper --random",
     "on-click-middle":"~/.config/scripts/random-anime-wallpaper.sh"
@@ -439,7 +439,7 @@
  // 常用命令
  "custom/actions":{
    "format":"",
-   "tooltip-format":"左键：常用命令",
+   "tooltip-format":"左键: 常用命令",
    "on-click":"~/.config/waybar/scripts/command-center.sh"
  },
 
