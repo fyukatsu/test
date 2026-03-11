@@ -73,7 +73,7 @@ tooltip .background {
 #bluetooth,
 #network,
 #custom-wfrec,
-#custom-screenshot,
+#custom-get_weather,
 #idle_inhibitor,
 #custom-settings,
 #power-profiles-daemon,
@@ -207,6 +207,7 @@ window#waybar.empty #window {
 }
 
 /* --- 中央主胶囊：idle + settings + power-profiles + applauncher + clock#date --- */
+#custom-get_weather,
 #idle_inhibitor,
 #custom-settings,
 #power-profiles-daemon,
@@ -227,6 +228,10 @@ window#waybar.empty #window {
     border-radius: 15px 0 0 15px;
     padding-left: 12px;
     color: @tertiary;
+}
+
+#custom-get_weather {
+    padding: 0 8px 0 12px;
 }
 
 #idle_inhibitor.activated {
