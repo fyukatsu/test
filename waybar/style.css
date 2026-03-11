@@ -414,14 +414,9 @@ window#waybar.empty #window {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @error;
+    background-color: transparent;
     color: @on_error;
     border-radius: 0;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 /* --- Powermenu（抽屉展开后也在同一胶囊内）--- */
