@@ -174,19 +174,7 @@ window#waybar.empty #window {
     background-color: transparent;
     border: none;
     margin: 0;
-    padding: 0 8px;
-}
-
-#center_capsule > * + * {
-    border-left: 1px solid alpha(@outline_variant, 0.3);
-}
-
-#center_capsule > *:first-child {
-    padding-left: 12px;
-}
-
-#center_capsule > *:last-child {
-    padding-right: 12px;
+    padding: 0;
 }
 
 #center_capsule #custom-get_weather {
@@ -269,39 +257,6 @@ window#waybar.empty #window {
     padding: 0;
 }
 
-#right_capsule > * {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0 8px;
-}
-
-#right_capsule > * + * {
-    border-left: 1px solid alpha(@outline_variant, 0.2);
-}
-
-/* --- Tray --- */
-#right_capsule #tray {
-    padding: 0 10px;
-}
-
-/* --- Audio group (drawer) --- */
-#right_capsule #audio {
-    padding: 0;
-    margin: 0;
-    border: none;
-}
-
-/* --- Pulseaudio --- */
-#right_capsule #pulseaudio {
-    padding: 0 8px;
-    color: @primary;
-}
-
-#right_capsule #pulseaudio-slider {
-    padding: 0 4px 0 8px;
-}
-
 #pulseaudio-slider slider {
     min-height: 0px;
     min-width: 0px;
@@ -325,75 +280,124 @@ window#waybar.empty #window {
     background-color: @tertiary;
 }
 
-/* --- Connectivity & utilities --- */
-#right_capsule #bluetooth {
-    font-size: 1.13em;
-}
-
-#right_capsule #bluetooth.disabled {
+/* --- Right capsule module styling matches legacy layout --- */
+.modules-right #tray,
+.modules-right #custom-updates,
+.modules-right #pulseaudio,
+.modules-right #pulseaudio-slider,
+.modules-right #bluetooth,
+.modules-right #network,
+.modules-right #custom-wfrec,
+.modules-right #custom-screenshot,
+.modules-right #custom-mako,
+.modules-right #clock.date,
+.modules-right #clock,
+.modules-right #cpu,
+.modules-right #memory,
+.modules-right #battery,
+.modules-right #custom-wlogout,
+.modules-right #custom-reboot,
+.modules-right #custom-lockscreen,
+.modules-right #custom-logout {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
     padding: 0 8px;
 }
 
-#right_capsule #custom-screenshot {
+/* --- Tray --- */
+.modules-right #tray {
+    padding: 0 10px;
+}
+
+/* --- Audio group (drawer) --- */
+.modules-right #audio {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* --- Pulseaudio --- */
+.modules-right #pulseaudio {
+    padding: 0 8px;
+    color: @primary;
+}
+
+.modules-right #pulseaudio-slider {
+    padding: 0 4px 0 8px;
+}
+
+/* --- Connectivity & utilities --- */
+.modules-right #bluetooth {
+    font-size: 1.13em;
+}
+
+.modules-right #bluetooth.disabled {
+    padding: 0 8px;
+}
+
+.modules-right #custom-screenshot {
     font-size: 1.15em;
 }
 
-#right_capsule #network {
+.modules-right #network {
     color: @on_surface_variant;
 }
 
-#right_capsule #custom-wfrec {
+.modules-right #custom-wfrec {
     font-size: 1.1em;
 }
 
-#right_capsule #custom-wfrec.recording {
+.modules-right #custom-wfrec.recording {
     color: @error;
 }
 
 /* --- System stats --- */
-#right_capsule #cpu {
+.modules-right #cpu {
     color: @on_primary_container;
 }
 
-#right_capsule #memory {
+.modules-right #memory {
     color: @tertiary;
 }
 
 /* --- Misc --- */
-#right_capsule #custom-mako {
+.modules-right #custom-mako {
     padding: 0 10px 0 8px;
 }
 
-#right_capsule #clock.date {
+.modules-right #clock.date {
     padding: 0 10px 0 12px;
 }
 
-#right_capsule #clock {
+.modules-right #clock {
     color: @secondary;
 }
 
-#right_capsule #battery {
+.modules-right #battery {
     padding: 0 12px 0 10px;
     color: @on_secondary_container;
 }
 
-#right_capsule #battery.critical:not(.charging) {
+.modules-right #battery.critical:not(.charging) {
     background-color: transparent;
     color: @on_error;
+    border-radius: 0;
 }
 
 /* --- Powermenu（抽屉展开后也在同一胶囊内）--- */
-#right_capsule #powermenu {
+.modules-right #powermenu {
     padding: 0;
     margin: 0;
 }
 
-#right_capsule #custom-wlogout {
+.modules-right #custom-wlogout {
     padding: 0 12px;
     font-size: 1.2em;
     color: @error;
 }
 
-#right_capsule #custom-logout {
+.modules-right #custom-logout {
     padding: 0 12px 0 8px;
 }
