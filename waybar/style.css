@@ -223,19 +223,22 @@ window#waybar.empty #window {
     border-right: none;
 }
 
-#idle_inhibitor {
+#custom-get_weather {
     border-left: 1px solid alpha(@outline_variant, 0.3);
     border-radius: 15px 0 0 15px;
-    padding-left: 12px;
+    padding: 0 8px 0 12px;
+    color: @primary;
+}
+
+#idle_inhibitor {
+    border-left: none;
+    border-radius: 0;
+    padding: 0 8px;
     color: @tertiary;
 }
 
-#custom-get_weather {
-    padding: 0 8px 0 12px;
-}
-
 #idle_inhibitor.activated {
-    padding: 0 8px 0 12px;
+    padding: 0 8px;
 }
 
 #custom-settings {
