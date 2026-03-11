@@ -131,8 +131,6 @@ window#waybar.empty #window {
     border-radius: 15px;
     border: 1px solid alpha(@outline_variant, 0.3);
     padding: 0;
-    display: flex;
-    align-items: center;
 }
 
 #center_capsule > * {
@@ -207,8 +205,6 @@ window#waybar.empty #window {
     border: 1px solid alpha(@outline_variant, 0.3);
     margin: 4px 4px 0 2px;
     padding: 0;
-    display: flex;
-    align-items: center;
 }
 
 #right_capsule > * {
