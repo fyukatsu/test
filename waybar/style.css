@@ -215,7 +215,7 @@ window#waybar.empty #window {
 }
 
 #right_capsule > * + * {
-    margin-left: 4px;
+    margin-left: 8px;
 }
 
 #pulseaudio-slider slider {
@@ -258,7 +258,16 @@ window#waybar.empty #window {
 }
 
 #right_capsule #audio > * + * {
-    margin-left: 4px;
+    margin-left: 8px;
+}
+
+/* --- Specific spacing for compact indicators --- */
+#right_capsule #bluetooth,
+#right_capsule #network,
+#right_capsule #cpu,
+#right_capsule #memory,
+#right_capsule #audio {
+    padding: 0 12px;
 }
 
 /* --- Pulseaudio --- */
