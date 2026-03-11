@@ -92,7 +92,7 @@ tooltip .background {
     background: transparent;
     border: none;
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(.55,-0.04,.91,.94);
+    transition: all 0.3s cubic-bezier(.55, -0.04, .91, .94);
 }
 
 #workspaces button:hover {
@@ -133,7 +133,7 @@ window#waybar.empty #window {
     padding: 0;
 }
 
-#center_capsule > * {
+#center_capsule>* {
     background-color: transparent;
     border: none;
     margin: 0;
@@ -207,7 +207,7 @@ window#waybar.empty #window {
     padding: 0;
 }
 
-#right_capsule > * {
+#right_capsule>* {
     background-color: transparent;
     border: none;
     margin: 0;
@@ -249,7 +249,7 @@ window#waybar.empty #window {
     border: none;
 }
 
-#right_capsule #audio > * {
+#right_capsule #audio>* {
     padding: 0 6px;
 }
 
@@ -275,11 +275,28 @@ window#waybar.empty #window {
 #right_capsule #bluetooth {
     font-size: 1.13em;
     padding: 0 6px;
+    color: @on_surface_variant;
+}
+
+#right_capsule #bluetooth.connected {
+    color: #4da3ff;
 }
 
 #right_capsule #network {
-    color: @on_surface_variant;
+    color: @secondary;
     padding: 0 6px;
+}
+
+#right_capsule #network.wifi {
+    color: @primary_fixed_dim;
+}
+
+#right_capsule #network.ethernet {
+    color: @tertiary;
+}
+
+#right_capsule #network.disconnected {
+    color: @error;
 }
 
 /* --- System stats --- */
@@ -306,7 +323,7 @@ window#waybar.empty #window {
 
 #right_capsule #battery.critical:not(.charging) {
     background-color: transparent;
-    color: @on_error;
+    color: @error;
 }
 
 /* --- Powermenu（抽屉展开后也在同一胶囊内）--- */
