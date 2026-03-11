@@ -141,7 +141,7 @@
     "on-click": "~/.config/waybar/scripts/wf-recorder.sh toggle", // 左键: 开始/停止
     "on-click-right": "~/.config/waybar/scripts/wf-recorder.sh stop"
   },
-  "custom/temperature": {
+  "custom/weather": {
     "format": "{}",
     "interval": 3600,
     "tooltip": false,
