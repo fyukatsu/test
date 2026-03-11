@@ -160,6 +160,7 @@
     "format-source-muted": "",
     "format-muted": "",
     "format-icons": {
+      "default": "",
       "headphone": "",
       "headset": "",
       "bluetooth": "",
