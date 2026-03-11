@@ -145,7 +145,7 @@
     "format": "{}",
     "interval": 3600,
     "tooltip": false,
-    "exec": "~/.local/scripts/get-weather.py"
+    "exec": "~/.local/share/scripts/get-weather.py"
   },
   //声音模块
   "group/audio": {
