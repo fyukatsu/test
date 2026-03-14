@@ -28,7 +28,7 @@
   /* ======================= */
   "custom/get_weather": {
     "format": "{}",
-    "interval": 3600,
+    "interval": 600,
     "tooltip": false,
     "exec": "~/.local/share/scripts/get_weather/get_weather.py"
   },
@@ -73,8 +73,8 @@
     "orientation": "inherit",
     "modules": [
       "custom/get_weather",
-      "idle_inhibitor",
-      "custom/settings",
+      // "idle_inhibitor",
+      // "custom/settings",
       "power-profiles-daemon",
       "custom/applauncher",
       "clock#date"
