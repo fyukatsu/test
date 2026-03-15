@@ -73,8 +73,8 @@
     "orientation": "inherit",
     "modules": [
       "custom/get_weather",
-      // "idle_inhibitor",
-      // "custom/settings",
+      "idle_inhibitor",
+      "custom/settings",
       "power-profiles-daemon",
       "custom/applauncher",
       "clock#date"
