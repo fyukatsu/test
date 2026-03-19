@@ -115,9 +115,9 @@
     "markup": true
   },
   "network": {
-    "format-disconnected": "{icon}&#8201;<span size='90%'>{bandwidthUpBytes}</span>",
-    "format-wifi": "{icon}&#8201;<span size='90%'>{bandwidthUpBytes:.0f}</span>",
-    "format-ethernet": "{icon}&#8201;<span size='90%'>{bandwidthUpBytes}</span>",
+    "format-disconnected": "{icon}&#8201;<span size='90%'>{bandwidthTotalBytes}</span>",
+    "format-wifi": "{icon}&#8201;<span size='90%'>{bandwidthTotalBytes}</span>",
+    "format-ethernet": "{icon}&#8201;<span size='90%'>{bandwidthTotalBytes}</span>",
     "format-icons": {
       "wifi": "",
       "disconnected": "󰤮",
