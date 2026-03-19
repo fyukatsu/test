@@ -139,11 +139,16 @@ tooltip .background {
 }
 
 #window_capsule #window {
-    background-color: alpha(@surface_container_highest, 0.9);
-    border-radius: 12px;
-    border: 1px solid alpha(@outline_variant, 0.4);
-    padding: 2px 14px;
-    margin: 4px 4px 4px 0;
+    background-color: @surface_container;
+    border-radius: 15px;
+    border: 1px solid alpha(@outline_variant, 0.3);
+    padding: 4px 16px;
+    margin: 4px 6px 4px 2px;
+    transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+#window_capsule #window:hover {
+    border-color: alpha(@outline, 0.6);
 }
 
 #window label {
