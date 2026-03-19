@@ -109,18 +109,12 @@
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon}",
+    "format-wifi": "{icon} {bandwidthUpBytes}",
     "format-ethernet": "{icon}",
     "format-icons": {
-      "wifi": [
-        "󰤯",
-        "󰤟",
-        "󰤢",
-        "󰤥",
-        "󰤨"
-      ],
+      "wifi": "",
       "disconnected": "󰤮",
-      "ethernet": "󰈀"
+      "ethernet": ""
     },
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname} : {ipaddr}",
     "tooltip-format-ethernet": "{ifname} : {ipaddr}",
