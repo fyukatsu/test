@@ -73,8 +73,6 @@
     "orientation": "inherit",
     "modules": [
       "custom/get_weather",
-      "idle_inhibitor",
-      "custom/settings",
       "power-profiles-daemon",
       "custom/applauncher",
       "clock#date"
@@ -241,7 +239,6 @@
       "cpu",
       "memory",
       "network",
-      "bluetooth",
       "group/audio",
       "clock",
       "battery",
