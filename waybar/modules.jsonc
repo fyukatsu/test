@@ -115,6 +115,7 @@
     "markup": true
   },
   "network": {
+    "interval": 5,
     "format-disconnected": "{icon}&#8201;<span size='90%'>{bandwidthTotalBytes}</span>",
     "format-wifi": "{icon}&#8201;<span size='90%'>{bandwidthTotalBytes}</span>",
     "format-ethernet": "{icon}&#8201;<span size='90%'>{bandwidthTotalBytes}</span>",
