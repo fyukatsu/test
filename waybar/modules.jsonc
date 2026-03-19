@@ -91,6 +91,17 @@
     "format": " {usage}%",
     "tooltip-format": "{usage}"
   },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input", 
+    "critical-threshold": 80,
+    "interval": 5,
+    "format": "{icon} {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true,
+    "tooltip-format": "当前温度: {temperatureC}°C",
+    "on-click": "kitty -e btop"
+  },
   "memory": {
     "interval": 5,
     "format": " {used}G",
@@ -125,16 +136,6 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "kitty --class bluetui -e bluetui"
   },
-  "group/audio": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
-    ]
-  },
   "pulseaudio": {
     "tooltip-format": "左键: 静音\n右键: 关闭麦克风\n中键: 打开面板",
     "format": "{icon} {volume}%",
@@ -158,11 +159,6 @@
     "on-click-middle": "pavucontrol --tab=3",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
-  },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal"
   },
   "clock": {
     "interval": 1,
@@ -192,43 +188,10 @@
     ],
     "tooltip-format": "剩余电量: {capacity}%\n充放电: {power}\n可用时间: {timeTo}\n电池健康度: {health}%"
   },
-  "group/powermenu": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "custom/wlogout",
-      "custom/reboot",
-      "custom/logout",
-      "custom/lockscreen"
-    ]
-  },
   "custom/wlogout": {
     "tooltip": false,
     "format": "",
     "on-click": "wlogout",
-    "on-scroll-up": "true",
-    "on-scroll-down": "true"
-  },
-  "custom/reboot": {
-    "tooltip": false,
-    "format": "",
-    "on-click": "systemctl reboot",
-    "on-scroll-up": "true",
-    "on-scroll-down": "true"
-  },
-  "custom/logout": {
-    "format": "",
-    "on-click": "niri msg action quit",
-    "tooltip": false,
-    "on-scroll-up": "true",
-    "on-scroll-down": "true"
-  },
-  "custom/lockscreen": {
-    "tooltip": false,
-    "format": "",
-    "on-click": "hyprlock || swaylock",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
@@ -237,12 +200,13 @@
     "modules": [
       "tray",
       "cpu",
+      "temperature",
       "memory",
       "network",
-      "group/audio",
+      "pulseaudio",
       "clock",
       "battery",
-      "group/powermenu"
+      "custom/wlogout"
     ]
   }
 }
