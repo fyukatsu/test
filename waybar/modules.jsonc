@@ -92,7 +92,7 @@
     "tooltip-format": "{usage}"
   },
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input", 
+    "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",  //根据对应路径更改
     "critical-threshold": 80,
     "interval": 5,
     "format": "{icon} {temperatureC}°C",
