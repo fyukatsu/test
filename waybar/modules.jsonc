@@ -86,7 +86,7 @@
   },
   "cpu": {
     "interval": 5,
-    "format": "&#8201;<span size='90%'>{usage}%</span>",
+    "format": "&#8201;<span size='80%'>{usage}%</span>",
     "tooltip-format": "{usage}",
     "markup": true
   },
@@ -94,8 +94,8 @@
     "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input", //根据对应路径更改
     "critical-threshold": 80,
     "interval": 5,
-    "format": "{icon}&#8201;<span size='90%'>{temperatureC}°C</span>",
-    "format-critical": "&#8201;<span size='90%'>{temperatureC}°C</span>",
+    "format": "{icon}&#8201;<span size='80%'>{temperatureC}°C</span>",
+    "format-critical": "&#8201;<span size='80%'>{temperatureC}°C</span>",
     "format-icons": [
       "",
       "",
@@ -110,14 +110,14 @@
   },
   "memory": {
     "interval": 5,
-    "format": "&#8201;<span size='90%'>{used}G</span>",
+    "format": "&#8201;<span size='80%'>{used}G</span>",
     "tooltip-format": "Used: {used} GiB\nTotal: {total} GiB\nPercentage: {percentage}%\n\nSwap Used: {swapUsed} GiB\nSwap Total: {swapTotal} GiB\nSwap Percentage: {swapPercentage}%",
     "markup": true
   },
   "network": {
-    "format-disconnected": "{icon}&#8201;<span size='90%'>{bandwidthUpBytes}</span>",
-    "format-wifi": "{icon}&#8201;<span size='90%'>{bandwidthUpBytes}</span>",
-    "format-ethernet": "{icon}&#8201;<span size='90%'>{bandwidthUpBytes}</span>",
+    "format-disconnected": "{icon}&#8201;<span size='80%'>{bandwidthUpBytes}</span>",
+    "format-wifi": "{icon}&#8201;<span size='80%'>{bandwidthUpBytes}</span>",
+    "format-ethernet": "{icon}&#8201;<span size='80%'>{bandwidthUpBytes}</span>",
     "format-icons": {
       "wifi": "",
       "disconnected": "󰤮",
@@ -132,8 +132,8 @@
   },
   "pulseaudio": {
     "tooltip-format": "左键: 静音\n右键: 关闭麦克风\n中键: 打开面板",
-    "format": "{icon}&#8201;<span size='90%'>{volume}%</span>",
-    "format-bluetooth": "{icon}&#8201;<span size='90%'>{volume}%</span>",
+    "format": "{icon}&#8201;<span size='80%'>{volume}%</span>",
+    "format-bluetooth": "{icon}&#8201;<span size='80%'>{volume}%</span>",
     "format-source": "",
     "format-source-muted": "",
     "format-muted": "",
@@ -160,8 +160,8 @@
     "states": {
       "critical": 20
     },
-    "format": "{icon}&#8201;<span size='90%'>{capacity}%</span>",
-    "format-charging": "&#8201;<span size='90%'>{capacity}%</span> ",
+    "format": "{icon}&#8201;<span size='80%'>{capacity}%</span>",
+    "format-charging": "&#8201;<span size='80%'>{capacity}%</span> ",
     "format-icons": [
       "",
       "",
