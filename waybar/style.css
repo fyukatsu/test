@@ -68,8 +68,9 @@ tooltip .background {
 /* ================================================================ */
 
 #workspaces,
-#window,
-#custom-cava {
+#window_capsule,
+#center_capsule,
+#right_capsule {
     background-color: @surface_container;
     color: @on_surface;
     border: 1px solid alpha(@outline_variant, 0.3);
@@ -83,12 +84,15 @@ tooltip .background {
     margin: 4px 2px 0 4px;
     padding: 0 4px;
     border-radius: 15px;
+    background: linear-gradient(135deg, alpha(@primary_fixed, 0.25), alpha(@primary_container, 0.9));
+    border-color: alpha(@primary_fixed, 0.65);
+    color: @on_primary_fixed_variant;
 }
 
 #workspaces button {
     padding: 0 10px;
     margin: 3px 2px;
-    color: @tertiary_container;
+    color: @primary_fixed_dim;
     background: transparent;
     border: none;
     border-radius: 12px;
@@ -96,26 +100,57 @@ tooltip .background {
 }
 
 #workspaces button:hover {
-    background-color: alpha(@on_tertiary, 0.6);
-    color: @on_surface;
+    background-color: alpha(@primary_fixed, 0.35);
+    color: @on_primary_fixed;
 }
 
 #workspaces button.active {
-    background-color: @tertiary;
-    color: @on_tertiary;
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#window_capsule {
+    margin: 4px 2px 0 2px;
+    padding: 0;
+    border-radius: 15px;
+    border-color: alpha(@secondary_fixed, 0.5);
+    background: linear-gradient(120deg, alpha(@secondary_fixed, 0.18), alpha(@secondary_container, 0.9));
+}
+
+#window_capsule>* {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 12px;
+}
+
+#taskbar button {
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    margin: 3px 2px;
+    padding: 0 10px;
+    color: @secondary_fixed_dim;
+    transition: background-color 0.2s ease;
+}
+
+#taskbar button.active,
+#taskbar button:hover {
+    background-color: alpha(@secondary_fixed_dim, 0.2);
+    color: @on_secondary_container;
 }
 
 #window {
-    padding: 0 12px;
-    margin: 4px 2px 0 2px;
-    border-radius: 15px;
+    padding: 0 10px;
+    margin: 0;
 }
 
 #window label {
     font-size: 0.89em;
+    color: @on_secondary_fixed_variant;
 }
 
-window#waybar.empty #window {
+window#waybar.empty #window_capsule {
     background-color: transparent;
     border-color: transparent;
 }
@@ -126,11 +161,12 @@ window#waybar.empty #window {
 
 /* --- 中央主胶囊（group/center_capsule）--- */
 #center_capsule {
-    background-color: @surface_container_high;
+    background: linear-gradient(125deg, alpha(@tertiary_fixed, 0.22), alpha(@secondary_container, 0.92));
     margin: 4px 0 0 0;
     border-radius: 15px;
-    border: 1px solid alpha(@outline_variant, 0.3);
+    border: 1px solid alpha(@tertiary_fixed, 0.5);
     padding: 0;
+    box-shadow: 0 8px 24px alpha(@tertiary_fixed, 0.15);
 }
 
 #center_capsule>* {
@@ -142,22 +178,22 @@ window#waybar.empty #window {
 
 #center_capsule #custom-get_weather {
     padding: 0 6px 0 10px;
-    color: @primary;
+    color: @primary_fixed;
 }
 
 #center_capsule #idle_inhibitor {
     padding: 0 6px;
-    color: @tertiary;
+    color: @tertiary_fixed;
 }
 
 #center_capsule #custom-settings {
     padding: 0 6px;
-    color: @secondary;
+    color: @secondary_fixed;
 }
 
 #center_capsule #power-profiles-daemon {
     padding: 0 6px;
-    color: @tertiary;
+    color: @secondary_fixed_dim;
 }
 
 #center_capsule #power-profiles-daemon.performance {
@@ -166,17 +202,18 @@ window#waybar.empty #window {
 }
 
 #center_capsule #power-profiles-daemon.balanced {
-    color: @tertiary;
+    color: @secondary_fixed_dim;
 }
 
 #center_capsule #power-profiles-daemon.power-saver {
-    color: @primary;
+    color: @tertiary_fixed_dim;
 }
 
 #center_capsule #custom-applauncher {
     font-size: 1.2em;
     padding: 0 10px;
-    color: @primary;
+    color: @primary_fixed_dim;
+    text-shadow: 0 0 6px alpha(@primary_fixed, 0.4);
 }
 
 #center_capsule #clock.date {
@@ -185,26 +222,17 @@ window#waybar.empty #window {
     letter-spacing: 0.5px;
 }
 
-/* --- Cava 胶囊 --- */
-#custom-cava {
-    background-color: @surface_container;
-    color: @primary;
-    margin: 4px 0 0 4px;
-    padding: 0 8px;
-    border-radius: 15px;
-    border: 1px solid alpha(@outline_variant, 0.3);
-}
-
 /* ================================================================ */
 /*                  RIGHT — 胶囊 group 容器                          */
 /* ================================================================ */
 
 #right_capsule {
-    background-color: @surface_container;
+    background: linear-gradient(140deg, alpha(@primary_container, 0.85), alpha(@tertiary_container, 0.85));
     border-radius: 15px;
-    border: 1px solid alpha(@outline_variant, 0.3);
+    border: 1px solid alpha(@primary_fixed_dim, 0.4);
     margin: 4px 4px 0 2px;
     padding: 0;
+    box-shadow: 0 12px 28px alpha(@primary_fixed, 0.18);
 }
 
 #right_capsule>* {
@@ -229,22 +257,22 @@ window#waybar.empty #window {
 
 /* --- Tray --- */
 #right_capsule #tray {
-    color: @secondary_fixed_dim;
+    color: @secondary_fixed;
 }
 
 /* --- Pulseaudio --- */
 #right_capsule #pulseaudio {
-    color: @primary_fixed_dim;
+    color: @primary;
 }
 
 /* --- Connectivity & utilities --- */
 #right_capsule #bluetooth {
     font-size: 1.13em;
-    color: @outline;
+    color: @tertiary_fixed_dim;
 }
 
 #right_capsule #bluetooth.connected {
-    color: @primary_fixed;
+    color: @tertiary_fixed;
 }
 
 #right_capsule #bluetooth.disabled {
@@ -252,7 +280,7 @@ window#waybar.empty #window {
 }
 
 #right_capsule #network {
-    color: @secondary;
+    color: @on_secondary_container;
 }
 
 #right_capsule #network.wifi {
@@ -260,7 +288,7 @@ window#waybar.empty #window {
 }
 
 #right_capsule #network.ethernet {
-    color: @tertiary_fixed_dim;
+    color: @secondary_fixed_dim;
 }
 
 #right_capsule #network.disconnected {
@@ -269,11 +297,11 @@ window#waybar.empty #window {
 
 /* --- System stats --- */
 #right_capsule #cpu {
-    color: @primary_container;
+    color: @primary_fixed;
 }
 
 #right_capsule #temperature {
-    color: @tertiary_container;
+    color: @tertiary_fixed;
     transition: color 0.2s ease;
 }
 
@@ -282,16 +310,16 @@ window#waybar.empty #window {
 }
 
 #right_capsule #memory {
-    color: @tertiary_fixed_dim;
+    color: @secondary_fixed_dim;
 }
 
 /* --- Clock & battery --- */
 #right_capsule #clock {
-    color: @secondary_fixed_dim;
+    color: @on_primary_fixed_variant;
 }
 
 #right_capsule #battery {
-    color: @on_secondary_container;
+    color: @on_secondary_fixed;
 }
 
 #right_capsule #battery.critical:not(.charging) {
