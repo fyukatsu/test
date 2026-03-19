@@ -68,7 +68,7 @@ tooltip .background {
 /* ================================================================ */
 
 #workspaces,
-#window_capsule,
+#window,
 #center_capsule,
 #right_capsule {
     background-color: @surface_container;
@@ -106,19 +106,6 @@ tooltip .background {
     color: @on_tertiary;
 }
 
-#window_capsule {
-    margin: 4px 2px 0 2px;
-    padding: 0;
-    border-radius: 15px;
-}
-
-#window_capsule>* {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0 12px;
-}
-
 #taskbar button {
     background: transparent;
     border: none;
@@ -138,24 +125,11 @@ tooltip .background {
     margin: 0;
 }
 
-#window_capsule #window {
-    background-color: @surface_container;
-    border-radius: 15px;
-    border: 1px solid alpha(@outline_variant, 0.3);
-    padding: 4px 16px;
-    margin: 4px 6px 4px 2px;
-    transition: background-color 0.2s ease, border 0.2s ease;
-}
-
-#window_capsule #window:hover {
-    border-color: alpha(@outline, 0.6);
-}
-
 #window label {
     font-size: 0.89em;
 }
 
-window#waybar.empty #window_capsule {
+window#waybar.empty #window {
     background-color: transparent;
     border-color: transparent;
 }
