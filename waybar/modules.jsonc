@@ -122,14 +122,6 @@
     "on-click": "kitty --class impala -e impala",
     "on-click-right": "nm-connection-editor"
   },
-  "bluetooth": {
-    "format": "",
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "kitty --class bluetui -e bluetui"
-  },
   "pulseaudio": {
     "tooltip-format": "左键: 静音\n右键: 关闭麦克风\n中键: 打开面板",
     "format": "{icon} {volume}%",
@@ -154,13 +146,6 @@
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
   },
-  "clock": {
-    "interval": 1,
-    "format": " {:%H:%M:%S}",
-    "max-length": 25,
-    "on-click": "gnome-clocks",
-    "tooltip": false
-  },
   "battery": {
     "interval": 60,
     "states": {
@@ -182,6 +167,13 @@
     ],
     "tooltip-format": "剩余电量: {capacity}%\n充放电: {power}\n可用时间: {timeTo}\n电池健康度: {health}%"
   },
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "max-length": 25,
+    "on-click": "gnome-clocks",
+    "tooltip": false
+  },
   "custom/wlogout": {
     "tooltip": false,
     "format": "",
@@ -198,8 +190,8 @@
       "memory",
       "network",
       "pulseaudio",
-      "clock",
       "battery",
+      "clock",
       "custom/wlogout"
     ]
   }

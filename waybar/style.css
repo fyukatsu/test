@@ -214,8 +214,13 @@ window#waybar.empty #window {
     padding: 0 6px;
 }
 
+#right_capsule label {
+    font-size: 0.92em;
+}
+
 #right_capsule #tray,
 #right_capsule #cpu,
+#right_capsule #temperature,
 #right_capsule #memory,
 #right_capsule #network,
 #right_capsule #bluetooth,
@@ -269,6 +274,15 @@ window#waybar.empty #window {
 /* --- System stats --- */
 #right_capsule #cpu {
     color: @primary_container;
+}
+
+#right_capsule #temperature {
+    color: @tertiary_container;
+    transition: color 0.2s ease;
+}
+
+#right_capsule #temperature.critical {
+    color: @error;
 }
 
 #right_capsule #memory {
