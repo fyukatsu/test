@@ -88,7 +88,7 @@
   },
   "cpu": {
     "interval": 5,
-    "format": "<span size='smaller'>{usage}%</span>",
+    "format": "&#8201;<span size='smaller'>{usage}%</span>",
     "tooltip-format": "{usage}",
     "markup": true
   },
@@ -96,8 +96,8 @@
     "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",  //根据对应路径更改
     "critical-threshold": 80,
     "interval": 5,
-    "format": "{icon} <span size='smaller'>{temperatureC}°C</span>",
-    "format-critical": " <span size='smaller'>{temperatureC}°C</span>",
+    "format": "{icon}&#8201;<span size='smaller'>{temperatureC}°C</span>",
+    "format-critical": "&#8201;<span size='smaller'>{temperatureC}°C</span>",
     "format-icons": ["", "", "", "", ""],
     "tooltip": true,
     "tooltip-format": "当前温度: {temperatureC}°C",
@@ -106,13 +106,13 @@
   },
   "memory": {
     "interval": 5,
-    "format": " <span size='smaller'>{used}G</span>",
+    "format": "&#8201;<span size='smaller'>{used}G</span>",
     "tooltip-format": "Used: {used} GiB\nTotal: {total} GiB\nPercentage: {percentage}%\n\nSwap Used: {swapUsed} GiB\nSwap Total: {swapTotal} GiB\nSwap Percentage: {swapPercentage}%",
     "markup": true
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon} <span size='smaller'>{bandwidthUpBytes}</span>",
+    "format-wifi": "{icon}&#8201;<span size='smaller'>{bandwidthUpBytes}</span>",
     "format-ethernet": "{icon}",
     "format-icons": {
       "wifi": "",
@@ -128,8 +128,8 @@
   },
   "pulseaudio": {
     "tooltip-format": "左键: 静音\n右键: 关闭麦克风\n中键: 打开面板",
-    "format": "{icon} <span size='smaller'>{volume}%</span>",
-    "format-bluetooth": "{icon} <span size='smaller'>{volume}%</span>",
+    "format": "{icon}&#8201;<span size='smaller'>{volume}%</span>",
+    "format-bluetooth": "{icon}&#8201;<span size='smaller'>{volume}%</span>",
     "format-source": "",
     "format-source-muted": "",
     "format-muted": "",
@@ -156,8 +156,8 @@
     "states": {
       "critical": 20
     },
-    "format": "{icon} <span size='smaller'>{capacity}%</span>",
-    "format-charging": " <span size='smaller'>{capacity}%</span> ",
+    "format": "{icon}&#8201;<span size='smaller'>{capacity}%</span>",
+    "format-charging": "&#8201;<span size='smaller'>{capacity}%</span> ",
     "format-icons": [
       "",
       "",
@@ -175,7 +175,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": " <span size='smaller'>{:%H:%M:%S}</span>",
+    "format": "&#8201;<span size='smaller'>{:%H:%M:%S}</span>",
     "max-length": 25,
     "on-click": "gnome-clocks",
     "tooltip": false,
