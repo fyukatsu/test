@@ -305,11 +305,11 @@ window#waybar.empty #window_capsule {
 
 /* --- Clock & battery --- */
 #right_capsule #clock {
-    color: @on_primary_fixed_variant;
+    color: @primary_fixed_dim;
 }
 
 #right_capsule #battery {
-    color: @on_secondary_fixed;
+    color: @tertiary_fixed;
 }
 
 #right_capsule #battery.critical:not(.charging) {
