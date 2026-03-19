@@ -138,6 +138,14 @@ tooltip .background {
     margin: 0;
 }
 
+#window_capsule #window {
+    background-color: alpha(@surface_container_highest, 0.9);
+    border-radius: 12px;
+    border: 1px solid alpha(@outline_variant, 0.4);
+    padding: 2px 14px;
+    margin: 4px 4px 4px 0;
+}
+
 #window label {
     font-size: 0.89em;
 }
