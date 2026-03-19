@@ -88,28 +88,31 @@
   },
   "cpu": {
     "interval": 5,
-    "format": " {usage}%",
-    "tooltip-format": "{usage}"
+    "format": " <span size='smaller'>{usage}%</span>",
+    "tooltip-format": "{usage}",
+    "markup": true
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",  //根据对应路径更改
     "critical-threshold": 80,
     "interval": 5,
-    "format": "{icon} {temperatureC}°C",
-    "format-critical": " {temperatureC}°C",
+    "format": "{icon} <span size='smaller'>{temperatureC}°C</span>",
+    "format-critical": " <span size='smaller'>{temperatureC}°C</span>",
     "format-icons": ["", "", "", "", ""],
     "tooltip": true,
     "tooltip-format": "当前温度: {temperatureC}°C",
-    "on-click": "kitty -e btop"
+    "on-click": "kitty -e btop",
+    "markup": true
   },
   "memory": {
     "interval": 5,
-    "format": " {used}G",
-    "tooltip-format": "Used: {used} GiB\nTotal: {total} GiB\nPercentage: {percentage}%\n\nSwap Used: {swapUsed} GiB\nSwap Total: {swapTotal} GiB\nSwap Percentage: {swapPercentage}%"
+    "format": " <span size='smaller'>{used}G</span>",
+    "tooltip-format": "Used: {used} GiB\nTotal: {total} GiB\nPercentage: {percentage}%\n\nSwap Used: {swapUsed} GiB\nSwap Total: {swapTotal} GiB\nSwap Percentage: {swapPercentage}%",
+    "markup": true
   },
   "network": {
     "format-disconnected": "{icon}",
-    "format-wifi": "{icon} {bandwidthUpBytes}",
+    "format-wifi": "{icon} <span size='smaller'>{bandwidthUpBytes}</span>",
     "format-ethernet": "{icon}",
     "format-icons": {
       "wifi": "",
@@ -120,12 +123,13 @@
     "tooltip-format-ethernet": "{ifname} : {ipaddr}",
     "tooltip-format-disconnected": "网络未连接",
     "on-click": "kitty --class impala -e impala",
-    "on-click-right": "nm-connection-editor"
+    "on-click-right": "nm-connection-editor",
+    "markup": true
   },
   "pulseaudio": {
     "tooltip-format": "左键: 静音\n右键: 关闭麦克风\n中键: 打开面板",
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
+    "format": "{icon} <span size='smaller'>{volume}%</span>",
+    "format-bluetooth": "{icon} <span size='smaller'>{volume}%</span>",
     "format-source": "",
     "format-source-muted": "",
     "format-muted": "",
@@ -144,15 +148,16 @@
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "on-click-middle": "pavucontrol --tab=3",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+    "markup": true
   },
   "battery": {
     "interval": 60,
     "states": {
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}% ",
+    "format": "{icon} <span size='smaller'>{capacity}%</span>",
+    "format-charging": " <span size='smaller'>{capacity}%</span> ",
     "format-icons": [
       "",
       "",
@@ -165,14 +170,16 @@
       "",
       ""
     ],
-    "tooltip-format": "剩余电量: {capacity}%\n充放电: {power}\n可用时间: {timeTo}\n电池健康度: {health}%"
+    "tooltip-format": "剩余电量: {capacity}%\n充放电: {power}\n可用时间: {timeTo}\n电池健康度: {health}%",
+    "markup": true
   },
   "clock": {
     "interval": 1,
-    "format": " {:%H:%M:%S}",
+    "format": " <span size='smaller'>{:%H:%M:%S}</span>",
     "max-length": 25,
     "on-click": "gnome-clocks",
-    "tooltip": false
+    "tooltip": false,
+    "markup": true
   },
   "custom/wlogout": {
     "tooltip": false,
